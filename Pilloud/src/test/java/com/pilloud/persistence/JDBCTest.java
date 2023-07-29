@@ -21,7 +21,7 @@ public class JDBCTest {
         try(Connection con = DriverManager.getConnection( 
                 "jdbc:mysql://localhost:3306/pilloud?serverTimezone=Asia/Seoul", 
                 "root", 
-                "root")){ 
+                "0000")){ 
             System.out.println(con); 
         } catch (Exception e) { 
             fail(e.getMessage()); 
