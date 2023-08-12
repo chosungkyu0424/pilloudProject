@@ -1,0 +1,50 @@
+@charset "EUC-KR";
+
+html, body {
+	border-left: solid 1px #ddd;
+	border-right: solid 1px #ddd;
+	margin: 0 auto;
+	width: 620px;
+	height: 100%;
+	overflow: hidden;
+}
+
+.header {
+	text-align: center;
+}
+
+h3 {
+/* 	text-align: center; */
+ 	display: inline-block;
+/* 	left: 50%;
+	right: 50%; */
+}
+
+img {
+	position: relative;
+	width: 40px;
+	height: 40px;
+ 	top: 10px;
+/*  	left: -200px; */
+}
+
+h3 {
+	text-align: center;
+}
+
+p {
+	padding: 10px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+}
+
+#footerHr {
+	width: 620px;
+}
+
+.logo {
+	margin: 0 20px 20px 20px;
+}
