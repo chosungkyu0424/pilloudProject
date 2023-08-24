@@ -4,7 +4,7 @@ html, body {
 	border-left: solid 1px #ddd;
 	border-right: solid 1px #ddd;
 	margin: 0 auto;
-	width: 620px;
+	width: 500px;
 	height: 100%;
 	overflow: hidden;
 }
@@ -65,4 +65,16 @@ input {
     font-family: "paybooc-Light", sans-serif;
     text-decoration: none;
     font-weight: 600;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	height: 70px;
+	width: 500px;
+}
+
+footer img {
+	width: 50px;
+	margin: 0px 0px 0px 10px;
 }

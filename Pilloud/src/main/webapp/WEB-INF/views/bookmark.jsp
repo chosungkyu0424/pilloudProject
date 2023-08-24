@@ -9,16 +9,20 @@
 </head>
 <body>
 	<!-- 상단바 -->
-	<div class="header">
-		<img alt="" src="../resources/img/back_btn.png">
-		<h3>자주 찾아보는 의약품</h3>
+	<header>
+	<div>
+	<a href="#" onclick="history.back();">
+		<img src="resources/img/left.png" alt="화살표" id="arrow" /></a>
+		<div class=title>자주 찾아보는 의약품</div>
 	</div>
+	</header>
 	<hr>
 	
-	<!-- 하단바 -->
-	<div class="footer">
-		<hr id="footerHr">
-		<img alt="logo" src="../resources/img/LOGO_FULL.png" class="logo">
-	</div>
+	<!-- footer -->
+	<footer>
+		<hr>
+		<a href="main" style="text-decoration-line:none;">
+		<img src="resources/img/LOGO_FULL.png" alt="메인홈" class="home" /> </a>
+	</footer>
 </body>
 </html>

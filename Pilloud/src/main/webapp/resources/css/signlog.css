@@ -4,29 +4,30 @@ html, body {
 	border-left: solid 1px #ddd;
 	border-right: solid 1px #ddd;
 	margin: 0 auto;
-	width: 620px;
+	width: 500px;
 	height: 100%;
 	overflow: hidden;
 }
 
-.backBtn {
-	position: relative;
-	width: 40px;
-	height: 40px;
- 	top: 10px;
+#arrow {
+	float: left;
+	width: 25px;
+	height: 20px;
+	margin: 16px 0px 10px 15px;
 }
 
 .container {
 	border: none;
-	width: 470px;
+	width: 375px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .header {
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: bold;
-	margin: 100px 0px;
+	margin-top: 150px;
+	margin-bottom: 120px;
 	position: relative;
 	top: 50px;
 }
@@ -37,40 +38,27 @@ html, body {
 	top: 70px;
 }
 
-.kBtn {
+.btn1 {
 	height: auto;
 	border: none;
     display: inline-block;
     padding: 15px 80px;
     margin: 10px;
     border-radius: 10px;
-	background-color: #EEE64C;
+	background-color: #c4d89dff;
     font-weight: 600;
     font-size: 15px;
-   	color: #371E1E;
+   	color: #ffffff;
 }
 
-.nBtn {
+.btn2 {
 	height: auto;
 	border: none;
     display: inline-block;
     padding: 15px 95px;
     margin: 0px 10px 10px;
     border-radius: 10px;
-	background-color: #5AB133;
-    font-weight: 600;
-    color: #ffffff;
-    font-size: 15px;
-}
-
-.aBtn {
-	height: auto;
-	border: none;
-    display: inline-block;
-    padding: 15px 95px;
-    margin: 0px 10px 10px;
-    border-radius: 10px;
-	background-color: rgb(0, 0, 0);
+	background-color: #c4d89dff;
     font-weight: 600;
     color: #ffffff;
     font-size: 15px;

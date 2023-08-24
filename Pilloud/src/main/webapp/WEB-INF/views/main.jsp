@@ -37,6 +37,7 @@
 		<img src="resources/img/main/menu4.png" alt="약국찾기" class="menu4" />
 		<a href="notice" style="text-decoration-line:none;">
 		<img src="resources/img/main/menu5.png" alt="공지사항" class="menu5" /> </a>
+		<a href="modify" style="text-decoration-line:none;">
 		<img src="resources/img/main/menu6.png"  alt="건강정보추가" class="menu6" />
 	</div>
 	
@@ -47,6 +48,7 @@
 		<img src="resources/img/main/home.png" alt="메인홈" class="home" /></a>
 		<a href="news" style="text-decoration-line:none;">
 		<img src="resources/img/main/news.png" alt="컬럼/시사" class="news" /></a>
+		<a href="mypage" style="text-decoration-line:none;">
 		<img src="resources/img/main/my.png" alt="마이" class="my" />
 	</footer>
 </body>

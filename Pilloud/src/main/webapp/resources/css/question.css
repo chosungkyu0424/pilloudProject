@@ -4,20 +4,38 @@ html, body {
 	border-left: solid 1px #ddd;
 	border-right: solid 1px #ddd;
 	margin: 0 auto;
-	width: 620px;
+	width: 500px;
 	height: 100%;
 	overflow: hidden;
 }
 
-.header {
-	text-align: center;
+header {
+	position: fixed;
+	top: 0;
+	height: 50px;
+	width: 500px;
+	background-color: white;
+	border-bottom : 1px solid lightgrey;
 }
 
-h3 {
-/* 	text-align: center; */
+#arrow {
+	float: left;
+	width: 25px;
+	height: 20px;
+	margin: 16px 0px 10px 15px;
+}
+
+.title {
+	float : right;
+	margin : 15px 185px 0px 0px;
+	font-weight: bold;
+}
+
+/* h3 {
+	text-align: center;
  	display: inline-block;
-/* 	left: 50%;
-	right: 50%; */
+	left: 50%;
+	right: 50%;
 }
 
 img {
@@ -25,26 +43,25 @@ img {
 	width: 40px;
 	height: 40px;
  	top: 10px;
-/*  	left: -200px; */
+ 	left: -200px;
 }
 
 h3 {
 	text-align: center;
-}
+} */
 
-p {
+/* p {
 	padding: 10px;
-}
+} */
 
-.footer {
+footer {
 	position: fixed;
 	bottom: 0;
+	height: 70px;
+	width: 500px;
 }
 
-#footerHr {
-	width: 620px;
-}
-
-.logo {
-	margin: 0 20px 20px 20px;
+footer img {
+	width: 50px;
+	margin: 0px 0px 0px 10px;
 }

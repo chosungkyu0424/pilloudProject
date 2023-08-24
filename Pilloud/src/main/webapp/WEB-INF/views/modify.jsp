@@ -9,11 +9,13 @@
 </head>
 <body>
 	<!-- 상단바 -->
-	<div class="header">
-		<img alt="" src="../resources/img/back_btn.png">
-		<h3>나의 정보 수정</h3>
+	<header>
+	<div>
+	<a href="#" onclick="history.back();">
+		<img src="resources/img/left.png" alt="화살표" id="arrow" /></a>
+		<div class=title>나의 정보 수정</div>
 	</div>
-	<hr>
+	</header>
 	
 	<!-- 기본 정보 입력 -->
 	<div class="basic">기본 정보</div><br>

@@ -9,15 +9,18 @@
 </head>
 <body>
 	<!-- 상단바 -->
-	<div class="header">
-		<img alt="" src="../resources/img/back_btn.png">
-		<h3>약관 및 정책</h3>
+	<header>
+	<div>
+	<a href="#" onclick="history.back();">
+		<img src="resources/img/left.png" alt="화살표" id="arrow" /></a>
+		<div class=title>이용약관</div>
 	</div>
+	</header>
 	<hr>
 	
 	<!-- 본문 내용 -->
 	<div class="container">
-	<h2>Pilloud 이용약관</h2>
+	<h3>Pilloud 이용약관</h3>
 	<p>Pilloud 서비스를 이용해 주셔서 감사합니다.<br><br>
 	   Pilloud는 의약품을 검색해 의약품에 관한 정보를 알아볼 수 있고, 개개인이 가지고 있는 지병, 
 	   알러지, 복용 약과 같은 개인기반정보를 가지고 복용이 가능한 약인지에 대한 정보 제공을 지원하고 있습니다.<br><br>
@@ -27,10 +30,12 @@
 	   시간을 내어 주시면 여러분과 Pilloud와 더욱더 가까운 사이가 될 수 있다고 생각합니다.</p>
 	 </div>
 	
-	<!-- 하단바 --> 
-	 <div class="footer">
-		<hr id="footerHr">
-		<img alt="logo" src="../resources/img/LOGO_FULL.png" class="logo">
-	</div>
+
+	<!-- footer -->
+	<footer>
+		<hr>
+		<a href="main" style="text-decoration-line:none;">
+		<img src="resources/img/LOGO_FULL.png" alt="메인홈" class="home" /> </a>
+	</footer>
 </body>
 </html>

@@ -8,11 +8,9 @@
 <title>로그인</title>
 </head>
 <body>
-	<!-- 뒤로가기 -->
-	<img alt="" src="../resources/img/back_btn.png" class="backBtn">
-
 	<!-- 로고 -->
 	<img alt="logo" src="../resources/img/LOGO_FULL.png" class="logo">
+	
 	<!-- 로그인 입력 폼 -->
 	<form action="" method="post">
 		<!-- <h2>로그인</h2> -->
@@ -24,7 +22,15 @@
 		<br><br><br><br>
 	
 		<!-- 로그인 버튼(메인화면으로 이동) -->
-		<button type="button" name="login" class="logBtn">로그인</button>
+		<button type="button" name="login" class="logBtn" onclick="location.href='main'">로그인</button>
 	</form>
+	
+	
+	<!-- footer -->
+	<footer>
+		<hr>
+		<a href="main" style="text-decoration-line:none;">
+		<img src="resources/img/LOGO_FULL.png" alt="메인홈" class="home" /> </a>
+	</footer>
 </body>
 </html>

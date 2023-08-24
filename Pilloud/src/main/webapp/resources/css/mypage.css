@@ -4,7 +4,7 @@ html, body {
 	border-left: solid 1px #ddd;
 	border-right: solid 1px #ddd;
 	margin: 0 auto;
-	width: 620px;
+	width: 500px;
 	height: 100%;
 	overflow: hidden;
 }
@@ -18,23 +18,23 @@ html, body {
 	text-align: center;
 }
 
-.backBtn {
-	position: relative;
-	width: 40px;
-	height: 40px;
- 	top: 10px;
- 	left: -280px;
+#arrow {
+	float: left;
+	width: 25px;
+	height: 20px;
+	margin: 18px 0px 10px 15px;
 }
 
 #header {
 	margin: auto;
 	position: relative;
-	top: 10px;
+	top: 50px;
+	text-align: center;
 }
 
 .main {
 	border: none;
-	width: 500px;
+	width: 450px;
 	height: 200px;
 	display: block;
     border-radius: 15px;
@@ -81,7 +81,7 @@ a {
 
 .subBtn {
 	border: none;
-	width: 500px;
+	width: 450px;
 	height: 100px;
 	display: block;
     border-radius: 10px;
@@ -99,15 +99,18 @@ p  {
 }
 
 .list {
-	margin-top: 25px;
+	margin-top: 15px;
 	margin-left: 50px;
 }
 
-.footerBtn {
-	width: 40px;
-	height: 40px;
-	text-align: center;
+footer{
+	position : fixed;
+	bottom :0; 
+	height:70px;
+	width : 500px;
+}
 
-	margin-left: 80px;
-	margin-right: 80px;
+footer img {
+	width : 30px;
+	margin : 5px 0px 0px 100px;
 }

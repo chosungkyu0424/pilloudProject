@@ -11,7 +11,9 @@
 	<!-- 상단 부분 -->
 	<div class="background">
 		<!-- 뒤로가기 버튼 -->
-		<img src="../resources/img/back_btn.png" class="backBtn">
+		<a href="#" onclick="history.back();" style="text-decoration-line: none;"> 
+			<img src="resources/img/left_arrow.png" alt="화살표" id="arrow" />
+		</a>
 		<p id="header">마이페이지</p>
 	</div>
 	
@@ -31,30 +33,35 @@
 	 	<hr style="width:90%;margin-bottom:15px;">
 	 	
 	 	<a href="modify" style="margin:0px 100px 0 70px;">나의 정보 수정</a>
-	 	<a href="subscribe" style="margin-left:70px;">컬럼구독</a>
+	 	<a href="subscribe" style="margin-left:20px;">컬럼구독</a>
  	</div>
 
 		
 	
-	<button type="button" name="subBtn" class="subBtn" onclick="location.href='bookmark.jsp'">
+	<button type="button" name="subBtn" class="subBtn" onclick="location.href='bookmark'">
 		<span style="font-size:18px;">자주 찾아보는 의약품</span><br>
 		지금까지 저장한 의약품들을 한 번에 볼 수 있어요
 	</button>
 	<hr style="width:90%;">
 	<div class="list">
-		<a href="question.jsp">자주 하는 질문</a><br><br><br>
-		<a href="">공지사항</a><br><br><br>
-		<a href="termsOfService.jsp">약관 및 정책</a><br><br><br>
+		<a href="question">자주 하는 질문</a><br><br><br>
+		<a href="notice">공지사항</a><br><br><br>
+		<a href="termsOfService">약관 및 정책</a><br><br><br>
 		<a href="">버전 정보</a><br><br><br>
 		<a href="">로그아웃</a><br><br><br>
 		<a href="">탈퇴하기</a><br>
 	</div><br>
 	
 	<!-- 하단바 -->
-	<hr>
-	<img alt="home" src="../resources/img/home.png" class="footerBtn">
-	<img alt="doc" src="../resources/img/doc.png" class="footerBtn">
-	<img alt="user" src="../resources/img/user.png" class="footerBtn">
+	<footer>
+		<hr style="background-color:lightgrey">
+		<a href="main" style="text-decoration-line:none;">
+		<img src="resources/img/main/home.png" alt="메인홈" class="home" /></a>
+		<a href="news" style="text-decoration-line:none;">
+		<img src="resources/img/main/news.png" alt="컬럼/시사" class="news" /></a>
+		<a href="mypage" style="text-decoration-line:none;">
+		<img src="resources/img/main/my.png" alt="마이" class="my" />
+	</footer>
 </body>
 </html>
 

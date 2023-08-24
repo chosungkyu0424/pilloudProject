@@ -9,7 +9,10 @@
 </head>
 <body>
 	<!-- 뒤로가기 -->
-	<img alt="" src="../resources/img/back_btn.png" class="backBtn">
+	<a href="#" onclick="history.back();">
+		<img src="resources/img/left.png" alt="화살표" id="arrow" />
+	</a>
+
 
 	<div class="container">
 		<p class="header">
@@ -19,28 +22,23 @@
 		</p>
 	</div>
 	
-	<!-- 카톡, 네이버, 애플로 시작하기 버튼 -->
+	<!-- 이메일 로그인 버튼 -->
 	<div class="btns">
-		<button type="button" name="kakao" class="kBtn">
-			<img alt="logo" src="../resources/img/kakao.png">
-			카카오톡으로 시작하기
+		<button type="button" name="btn1" class="btn1" onclick="location.href='signup'">
+			이메일로 시작하기
 		</button><br>
 		
-		<button type="button" name="naver" class="nBtn">
-			<img alt="logo" src="../resources/img/naver.png">
-			네이버로 시작하기
-		</button><br>
+		<p>이미 계정이 있으신가요?</p>
 		
-		<button type="button" name="apple" class="aBtn">
-			<img alt="logo" src="../resources/img/apple.png">
-			Apple로 시작하기
+		<button type="button" name="btn2" class="btn2" onclick="location.href='login'">
+			로그인하기
 		</button><br>
 	</div>
 	
-	<div class="bottom">
+<!-- 	<div class="bottom">
 		<a href="http://localhost:9090/ex/views/signup.jsp">이메일로 시작하기</a><br><br>
 		이미 계정이 있으신가요? <a href="http://localhost:9090/ex/views/login.jsp">로그인하기</a>
-	</div>
+	</div> -->
 
 </body>
 </html>

@@ -9,7 +9,8 @@
 </head>
 <body>
 	<!-- 로고 -->
-	<img alt="logo" src="../resources/img/LOGO_FULL.png">
+	<img alt="logo" src="../resources/img/LOGO_FULL.png" class="logo">
+	
 	<!-- 회원가입 입력 폼 -->
 	<form action="" method="post">
 		<!-- <h2>회원가입</h2> -->
@@ -36,10 +37,18 @@
 		<div class="text">
 		여<input type="checkbox" name="sex" id="cb1">
 		남<input type="checkbox" name="sex" id="cb2">
-		</div><br><br><br><br>
+		</div><br><br>
 		
 		<!-- 가입하기 버튼 (로그인 화면 이동) -->
 		<button type="button" name="signup" class="signBtn" onclick="location.href='http://localhost:9090/login'">가입하기</button>
 	</form>
+	
+	
+	<!-- footer -->
+	<footer>
+		<hr>
+		<a href="main" style="text-decoration-line:none;">
+		<img src="resources/img/LOGO_FULL.png" alt="메인홈" class="home" /> </a>
+	</footer>
 </body>
 </html>
