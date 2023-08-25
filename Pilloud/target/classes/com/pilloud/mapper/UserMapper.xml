@@ -4,7 +4,22 @@
   	
   	<!-- 회원가입 -->
   	<insert id="userSignup">
-  		INSERT INTO USER_MST VALUES(#{id}, #{pw}, #{nm}, #{birth}, #{email}, #{sex})
+  		INSERT INTO 
+  			USER_MST(
+  				  ID
+  				, PW
+  				, NM
+  				, BIRTH
+  				, EMAIL
+  				, SEX
+  			) VALUES (
+  				  #{id}
+  				, #{pw}
+  				, #{nm}
+  				, #{birth}
+  				, #{email}
+  				, #{sex}
+  			)
   	</insert>
   	
   	<!-- 아이디 중복검사 -->

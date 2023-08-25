@@ -21,4 +21,10 @@ public class UserVO {
 	
 	//회원 이메일
 	private String sex;
+	
+	//회원 약관동의1
+	private String agreeYn1;
+		
+	//회원 약관동의2
+	private String agreeYn2;
 }
