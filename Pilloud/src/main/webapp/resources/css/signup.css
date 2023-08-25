@@ -15,7 +15,8 @@ html, body {
 	width: 100px;
 	height: 100px;
 	position: relative;
-	top: 30px;
+	top: 30px; 
+	
 }
 
 form {
@@ -79,7 +80,7 @@ input {
 
 #pw, 
 #pwpw,
-#name,
+#nm,
 #birth,
 #em {
 	width: 300px;
@@ -94,8 +95,8 @@ input {
     text-decoration: none;
     font-weight: 600;
 }
-
-footer {
+ 
+ footer {
 	position: fixed;
 	bottom: 0;
 	height: 70px;
@@ -105,4 +106,50 @@ footer {
 footer img {
 	width: 50px;
 	margin: 0px 0px 0px 10px;
+} 
+ 
+/* 중복아이디 존재하지 않는경우 */
+.id_input_re_1{
+	color : green;
+	display : none;
 }
+/* 중복아이디 존재하는 경우 */
+.id_input_re_2{
+	color : red;
+	display : none;
+}
+
+/* 유효성 검사 문구 */
+.final_id_ck{
+    display: none;
+}
+.final_pw_ck{
+    display: none;
+}
+.final_pwck_ck{
+    display: none;
+}
+.final_name_ck{
+    display: none;
+}
+.final_birth_ck{
+    display: none;
+}
+.final_mail_ck{
+    display: none;
+}
+.final_sex_ck{
+    display: none;
+}
+
+/* 비밀번호 확인 일치 유효성검사 */
+.pwck_input_re_1{
+        color : green;
+        display : none;    
+}
+.pwck_input_re_2{
+        color : red;
+        display : none;    
+}    
+ 
+ 

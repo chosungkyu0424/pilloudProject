@@ -57,16 +57,6 @@ input {
 	width: 300px;
 }
 
-.logBtn {
-    border: none;
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 15px;
-    font-family: "paybooc-Light", sans-serif;
-    text-decoration: none;
-    font-weight: 600;
-}
-
 footer {
 	position: fixed;
 	bottom: 0;
@@ -78,3 +68,19 @@ footer img {
 	width: 50px;
 	margin: 0px 0px 0px 10px;
 }
+ 
+.logBtn {
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* 로그인 실패시 경고글 */
+.login_warn{
+    margin-top: 30px;
+    text-align: center;
+    color : red;
+} 
