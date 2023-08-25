@@ -156,7 +156,7 @@ $(document).ready(function(){
         if(idCheck&&idckCheck&&pwCheck&&pwckCheck&&pwckcorCheck&&nameCheck&&birthCheck&&mailCheck){
         	$("#signup_form").attr("action", "/signup"); 
     		$("#signup_form").submit(); 
-    		int hello = 12;
+    		var hello = 421;
     		// onclick="location.href='http://localhost:8080/login'"
         }   
   
