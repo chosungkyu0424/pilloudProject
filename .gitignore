@@ -3,6 +3,7 @@
 
 ### Eclipse ###
 .metadata
+root-context.xml
 /bin
 tmp/
 *.tmp
