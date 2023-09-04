@@ -33,4 +33,11 @@ public class UserServiceImpl implements UserService{
         
         return usermapper.userLogin(user);
     }
+
+    /* 유저 정보수정 */
+	@Override
+	public int updateInfo(UserVO user) throws Exception {
+		return usermapper.updateInfo(user);
+	}
+    
 }

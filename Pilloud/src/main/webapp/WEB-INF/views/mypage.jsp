@@ -1,11 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <link href="../resources/css/mypage.css?after" rel="stylesheet">
 <title>마이페이지</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>  
 </head>
 <body>
 	<!-- 상단 부분 -->
@@ -22,7 +27,7 @@
 		<!-- 프로필 -->
 		<img alt="" src="../resources/img/profile.png" class="profile">
 		<!-- 이름 -->
-		<span style="margin: 50px 0 0 70px;font-size:18px;font-weight:bold;">누군가</span>
+		<span id="name" style="margin: 50px 0 0 70px;font-size:18px;font-weight:bold;">${user.nm}님</span>  
 		<!-- 지병 -->
 		<div id="d">
 			<P class="di">페니토인</P>
@@ -60,8 +65,12 @@
 		<a href="news" style="text-decoration-line:none;">
 		<img src="resources/img/main/news.png" alt="컬럼/시사" class="news" /></a>
 		<a href="mypage" style="text-decoration-line:none;">
-		<img src="resources/img/main/my.png" alt="마이" class="my" />
+		<img src="resources/img/main/my.png" alt="마이" class="my" /></a> 
 	</footer>
+	
+<script type="text/javascript">
+    
+</script>
 </body>
 </html>
 

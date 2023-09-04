@@ -16,7 +16,7 @@
 	<!-- 로고 -->
 	<img alt="logo" src="../resources/img/LOGO_FULL.png" class="logo">
 	<!-- 로그인 입력 폼 -->
-	<form id="login_form" action="" method="post">
+	<form id="login_form"  method="post">
 		<!-- <h2>로그인</h2> -->
 		<h4 class="w3">아이디</h4><br>
 		<input type="text" name="id" placeholder="아이디 입력" id="id"><br>
@@ -28,14 +28,14 @@
                 <div class = "login_warn">사용자 ID 또는 비밀번호를 잘못 입력하셨습니다.</div>
         </c:if>
 		<br><br><br><br>
-	  
-		<!-- 로그인 버튼(메인화면으로 이동) -->  
-		<button type="button" name="login" class="logBtn" onclick="location.href='main'">로그인</button>
+	    
+		<!-- 로그인 버튼(메인화면으로 이동) -->   
+		<button  name="login" id="loginBtn" class="logBtn" >로그인</button>  
 	</form>
 	
 	<!-- footer -->
 	<footer>
-		<hr>
+		<hr> 
 		<a href="main" style="text-decoration-line:none;">
 		<img src="resources/img/LOGO_FULL.png" alt="메인홈" class="home" /> </a>
 	</footer> 
@@ -45,10 +45,11 @@
     /* 로그인 버튼 클릭 메서드 */
     $("#loginBtn").click(function(){
     	/* 로그인 메서드 서버 요청 */
-        $("#login_form").attr("action", "/login");
-        $("#login_form").submit();
+        $("#login_form").attr("action", "/login"); 
+        $("#login_form").submit();  
         
     });
+    
  
 </script>
 </body>

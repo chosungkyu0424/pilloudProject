@@ -31,4 +31,11 @@
     <select id="userLogin" resultType="com.pilloud.model.UserVO">
         SELECT ID, PW, NM, BIRTH, EMAIL, SEX FROM USER_MST WHERE ID = #{id}
     </select>
+    
+    <!-- 유저정보수정 -->
+    <update id="updateInfo" parameterType="com.pilloud.model.UserVO">
+        UPDATE USER_MST SET EMAIL = #{email}, SEX = #{sex} WHERE ID = #{id}
+    </update>
+    
+    
 </mapper>

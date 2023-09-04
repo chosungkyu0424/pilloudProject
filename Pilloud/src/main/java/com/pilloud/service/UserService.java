@@ -12,4 +12,9 @@ public interface UserService {
 	
 	/* 로그인 */
     public UserVO userLogin(UserVO user) throws Exception;
+    
+    /* 유저정보수정 */
+    public int updateInfo(UserVO user) throws Exception;
+    
+   
 }

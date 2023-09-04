@@ -71,4 +71,13 @@ public class HomeController {
 		return "shapeSear";
 	}
 
+	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
+	public String mypage() {
+		return "mypage";
+	}
+	
+	@RequestMapping(value = "/modify", method = RequestMethod.GET)
+	public String modify() {
+		return "modify";
+	}
 }

@@ -21,6 +21,7 @@
 		<input type="text" name="id" placeholder="아이디 입력" id="id">
 		<button type="button" name="checkId" class="checkid" id="checkIdBtn">중복 확인</button><br>
 		 
+		<div><span class="id_input_re_0">아이디를 입력하세요.</span></div>  
 		<div><span class="id_input_re_1">사용 가능한 아이디입니다.</span></div>
 		<div><span class="id_input_re_2">아이디가 이미 존재합니다.</span></div> 
 		<div><span class="final_id_ck">아이디를 입력해주세요.</span></div>
@@ -163,28 +164,39 @@ $(document).ready(function(){
 	});
 });
  
-//아이디 중복검사
+//아이디 중복검사   
 $('#checkIdBtn').on("click", function(){
+	var inputId = $('#id').val();  
+	
 	var idCk = $('#id').val();			
 	var data = {id : idCk}				
 	
-	$.ajax({
-		type : "post",
-		url : "/idChk", 
-		data : data,
-		success : function(result){
-			 console.log("성공 여부" + result);
-			 if(result != 'fail'){
-					$('.id_input_re_1').css("display","inline-block");
-					$('.id_input_re_2').css("display", "none");				
-					idckCheck = true;
-				} else {
-					$('.id_input_re_2').css("display","inline-block");
-					$('.id_input_re_1').css("display", "none");		
-					idckCheck = false;
-				}
-		}// success 종료
-	}); // ajax 종료	
+	if(inputId == ""){      
+		$('.id_input_re_0').css("display","inline-block"); 
+		$('.id_input_re_1').css("display", "none");  
+		$('.id_input_re_2').css("display", "none");	
+	} else{
+		$.ajax({
+			type : "post",
+			url : "/idChk", 
+			data : data,
+			success : function(result){
+				 console.log("성공 여부" + result);
+				 if(result != 'fail'){
+						$('.id_input_re_1').css("display","inline-block");
+						$('.id_input_re_2').css("display", "none");		
+						$('.id_input_re_0').css("display", "none");	
+						idckCheck = true;
+					} else {
+						$('.id_input_re_2').css("display","inline-block");
+						$('.id_input_re_1').css("display", "none");  
+						$('.id_input_re_0').css("display", "none");	
+						idckCheck = false;
+					}
+			}// success 종료
+		}); // ajax 종료	  
+	}
+	
 
 });
  

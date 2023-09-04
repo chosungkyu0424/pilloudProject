@@ -1,55 +1,76 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR" session="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="resources/css/main.css" type="text/css">
 <meta charset="EUC-KR">
 <title>Main Page</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script> 
 </head>
 
-<body>
-	<!-- ·Î°í + °Ë»ö Ã¢ -->
-	<header>
+<body>  
+	<!-- ë¡œê³  + ê²€ìƒ‰ ì°½ -->
+	<header>        
+	<!-- ë¡œê·¸ì¸ í•˜ì§€ ì•Šì€ ìƒíƒœ -->
+	 <c:if test="${ user == null }">
+		<a href = "login">ë¡œê·¸ì¸</a>    
+		<a href = "signup">íšŒì›ê°€ì…</a>  
+	</c:if>
+	
+	<!-- ë¡œê·¸ì¸í•œ ìƒíƒœ -->      
+     <c:if test="${ user != null }"> 
+     	<span>${user.nm}ë‹˜ì…ë‹ˆë‹¤.</span>
+     	<a href="/logout.do">ë¡œê·¸ì•„ì›ƒ</a>
+    </c:if>
+                
 	<div>
 		<img src="resources/img/LOGO_FULL.png" alt="" id="logo" />
 		<div id="search">
-			<input type="text" placeholder="¾àÇ°¸íÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä" /> <img
+			<input type="text" placeholder="ì•½í’ˆëª…ì„ ì…ë ¥í•´ì£¼ì„¸ìš”" /> <img
 				src="resources/img/search.png" alt="" id="icon" />
 		</div>
 	</div>
 	</header>
 
 
-	<!-- 1¹øÂ° ÁÙ ¸Ş´º -->
+	<!-- 1ë²ˆì§¸ ì¤„ ë©”ë‰´ -->
 	<div id="fmenu">
 		<a href="cbnsear" style="text-decoration-line:none;">
-		<img src="resources/img/main/menu1.png" alt="ÁÖÀÇ»çÇ×" class="menu1" /> </a>
+		<img src="resources/img/main/menu1.png" alt="ì£¼ì˜ì‚¬í•­" class="menu1" /> </a>
 		<a href="pillSear" style="text-decoration-line:none;">
-		<img src="resources/img/main/menu2.png" alt="ÀÇ¾àÇ° °Ë»ö" class="menu2" /> </a> 
+		<img src="resources/img/main/menu2.png" alt="ì˜ì•½í’ˆ ê²€ìƒ‰" class="menu2" /> </a> 
 		<a href="shapeSear" style="text-decoration-line:none;">
-		<img src="resources/img/main/menu3.png" alt="¸ğ¾çÀ¸·Î °Ë»ö" class="menu3" /> </a>
+		<img src="resources/img/main/menu3.png" alt="ëª¨ì–‘ìœ¼ë¡œ ê²€ìƒ‰" class="menu3" /> </a>
 	</div>
 	
-	<!-- 2¹øÂ° ÁÙ ¸Ş´º -->
+	<!-- 2ë²ˆì§¸ ì¤„ ë©”ë‰´ -->
 	<div id="fmenu">
 	
-		<img src="resources/img/main/menu4.png" alt="¾à±¹Ã£±â" class="menu4" />
+		<img src="resources/img/main/menu4.png" alt="ì•½êµ­ì°¾ê¸°" class="menu4" />
 		<a href="notice" style="text-decoration-line:none;">
-		<img src="resources/img/main/menu5.png" alt="°øÁö»çÇ×" class="menu5" /> </a>
-		<a href="modify" style="text-decoration-line:none;">
-		<img src="resources/img/main/menu6.png"  alt="°Ç°­Á¤º¸Ãß°¡" class="menu6" />
+		<img src="resources/img/main/menu5.png" alt="ê³µì§€ì‚¬í•­" class="menu5" /> </a>
+		<a href="modify" style="text-decoration-line:none;"></a>
+		<img src="resources/img/main/menu6.png"  alt="ê±´ê°•ì •ë³´ì¶”ê°€" class="menu6" />
 	</div>
 	
-	<!-- ÇÏ´Ü ¹Ù -->
+	<!-- í•˜ë‹¨ ë°” -->
 	<footer>
 		<hr style="background-color:lightgrey">
 		<a href="main" style="text-decoration-line:none;">
-		<img src="resources/img/main/home.png" alt="¸ŞÀÎÈ¨" class="home" /></a>
+		<img src="resources/img/main/home.png" alt="ë©”ì¸í™ˆ" class="home" /></a>
 		<a href="news" style="text-decoration-line:none;">
-		<img src="resources/img/main/news.png" alt="ÄÃ·³/½Ã»ç" class="news" /></a>
-		<a href="mypage" style="text-decoration-line:none;">
-		<img src="resources/img/main/my.png" alt="¸¶ÀÌ" class="my" />
+		<img src="resources/img/main/news.png" alt="ì»¬ëŸ¼/ì‹œì‚¬" class="news" /></a>
+		<a href="mypage" style="text-decoration-line:none;">  
+		<img src="resources/img/main/my.png" alt="ë§ˆì´" class="my" /></a>   
 	</footer>
+	
+	<script>
+	
+	</script>
 </body>
 </html>
