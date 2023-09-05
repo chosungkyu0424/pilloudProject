@@ -52,8 +52,8 @@ input {
 	left: -120px;
 }
 
-#id, 
-#pw {
+.id, 
+.pw {
 	width: 300px;
 }
 
@@ -77,6 +77,7 @@ footer img {
     font-family: "paybooc-Light", sans-serif;
     text-decoration: none;
     font-weight: 600;
+/*     background-color: #C4D89D; */
 }
 /* 로그인 실패시 경고글 */
 .login_warn{
