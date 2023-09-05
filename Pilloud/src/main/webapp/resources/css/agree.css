@@ -54,7 +54,7 @@ h4 {
 	margin:0 20px 0 20px; 
 }
 
-.check {
+.check1, .check2 {
 	margin-left: 25px;
 }
 
@@ -68,8 +68,13 @@ h4 {
     font-weight: 600;
     margin: 30px 164px;
 }
+.btnCheck {
+	background-color : #C4D89D;
+}
+
 
 footer {
+	background-color : white;
 	position: fixed;
 	bottom: 0;
 	height: 70px;

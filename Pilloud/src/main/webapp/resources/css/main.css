@@ -1,4 +1,4 @@
-body {
+html, body {
 	border-left-width: 1px;
 	border-left-style: solid;
 	border-left-color: #ddd;
@@ -10,7 +10,6 @@ body {
 	height: 100%;
 	overflow: hidden;
 }
-
 #logo {
 	margin: 10px 0px 0px 30px;
 	width: 70px;
