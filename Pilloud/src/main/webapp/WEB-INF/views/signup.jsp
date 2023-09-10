@@ -50,7 +50,7 @@
 		<span class="final_mail_ck">이메일을 입력해주세요.</span> 
 		
 		<h4 class="w4">전화번호</h4><br>
-		<input type="text" name="phone" placeholder="ex) 01012345678" class="phone"><br>  
+		<input type="text" name="tel" placeholder="ex) 01012345678" class="tel"><br>    
 		
 		<h4 class="w2">성별</h4><br>
 		<div class="text">
@@ -83,7 +83,7 @@ var birthCheck = false;         // 생년월일
 var mailCheck = false;          // 이메일
 var sexCheck = false;           // 성별
 
-$(document).ready(function(){
+$(document).ready(function(){ 
 	//회원가입 버튼(회원가입 기능 작동)  
 	$(".signupBtn").click(function(){  
         /* 입력값 변수 */
@@ -92,7 +92,8 @@ $(document).ready(function(){
         var pwpw = $('.pwpw').val();            // 비밀번호 확인 입력란
         var nm = $('.nm').val();                // 이름 입력란
         var birth = $('.birth').val();          // 생년월일 입력란
-        var email = $('.em').val();          // 이메일 입력란
+        var email = $('.em').val();          	// 이메일 입력란
+        var tel = $('.tel').val();          	// 전화번호
         var sex1 = $('.cb1').val();             // 성별(여) 입력란
         var sex2 = $('.cb2').val();             // 성별(남) 입력란
         
@@ -234,7 +235,7 @@ $('.pwpw').on("propertychange change keyup paste input", function(){
 	const inputName = document.getElementsByClassName("nm")[0];
 	const inputBirth = document.getElementsByClassName("birth")[0];
 	const inputEmail = document.getElementsByClassName("em")[0];
-	const inputPhone = document.getElementsByClassName("phone")[0];
+	const inputTel   = document.getElementsByClassName("tel")[0];
  	const selectSex1 = document.getElementsByClassName("cb1")[0];
 	const selectSex2 = document.getElementsByClassName("cb2")[0];
 	
@@ -242,14 +243,14 @@ $('.pwpw').on("propertychange change keyup paste input", function(){
 	inputPw.addEventListener("keyup", validate);
 	inputPwpw.addEventListener("keyup", validate);
 	inputName.addEventListener("keyup", validate);
-	inputBirth.addEventListener("keyup", validate);
+	inputBirth.addEventListener("keyup", validate); 
 	inputEmail.addEventListener("keyup", validate);
-	inputPhone.addEventListener("keyup", validate);
+	inputTel.addEventListener("keyup", validate);
  	selectSex1.addEventListener("keyup", validate);
  	selectSex2.addEventListener("keyup", validate);
 	
-	function validate() {
-	   if (!(inputId.value && inputPw.value && inputPwpw.value && inputName.value && inputBirth.value && inputEmail.value && inputPhone.value && selectSex1.checked || selectSex2.checked)) {
+	function validate() { 
+	   if (!(inputId.value && inputPw.value && inputPwpw.value && inputName.value && inputBirth.value && inputEmail.value && inputTel.value && selectSex1.checked || selectSex2.checked)) {
 	      button.disabled = true;
 	      button.classList.remove("signupBtnDisabled");
 	   } else {

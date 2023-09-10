@@ -96,6 +96,7 @@
 	                // 서버에서 받은 JSON 데이터를 사용
 	                $('#emailInput').val(result.email);
 	                $('#nmInput').val(result.nm);
+	                $('#telInput').val(result.tel);  
 	                $('#sexInput').val(result.sex);     
 	            } else {
 	                alert("유저 정보를 가져오는 데 실패했습니다.");
@@ -115,6 +116,7 @@
 	$('#editBtn').on("click", function() {
     var email = $('#emailInput').val();
     var nm = $('#nmInput').val();
+    var tel = $('#telInput').val();  
     var sex = $('#sexInput').val(); 
     var id = '<c:out value="${sessionScope.user.id}" />';  
       
@@ -122,6 +124,7 @@
         id: id,
     	email: email,
         nm: nm,
+        tel: tel,   
         sex: sex
     };
 
@@ -135,7 +138,8 @@
                 
                 // 서버에서 업데이트된 데이터를 가져와 입력란에 설정
                 $('#emailInput').val(userInfo.email);
-                $('#nmInput').val(userInfo.nm);
+                $('#nmInput').val(userInfo.nm);  
+                $('#telInput').val(userInfo.tel); 
                 $('#sexInput').val(userInfo.sex);
             
         },
