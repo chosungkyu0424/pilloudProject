@@ -46,21 +46,21 @@
 	<!-- 상세 정보 입력 -->
 	<div class="detail">상세 정보</div><br>
 	<div class="dinfo">
-		<input type="number" name="age" placeholder="나이를 입력해주세요" id="box"><br>
-		<input type="text" name="allergy" placeholder="알러지 성분을 입력해주세요" id="box">
+		<input type="number" class="box" name="age" placeholder="나이를 입력해주세요" id="ageInput"><br>
+		<input type="text" class="box" name="allergy" placeholder="알러지 성분을 입력해주세요" id="box">
 		<button type="button" name="add" class="addBtn">추가</button><br>
 		<ul>
 			<p>추가 된 알러지 성분 정보</p>
 			<li>아세트아미노펜</li>
 			<li>페니토인</li>
 		</ul>
-		<input type="text" name="medicine" placeholder="복용 중인 약을 입력해주세요" id="box">
+		<input type="text" class="box" name="medicine" placeholder="복용 중인 약을 입력해주세요" id="box">
 		<button type="button" name="add" class="addBtn">추가</button><br>
 		<ul>
 			<p>추가 된 복용 중인 약 정보</p>
-			<li>인슐린</li>
+			<li>인슐린</li> 
 		</ul>
-		<input type="text" name="disease" placeholder="앓고 있는 지병이 있으신가요" id="box">
+		<input type="text"  class="box" name="disease" placeholder="앓고 있는 지병이 있으신가요" id="box">
 		<button type="button" name="add" class="addBtn">추가</button><br>
 		<ul>
 			<p>추가 된 지병 정보</p>
@@ -79,7 +79,8 @@
 	jQuery().ready(function () {
 	    // 세션 값 가져오기
 	    var id = '<c:out value="${sessionScope.user.id}" />';  
-	
+	    var birth = '<c:out value="${sessionScope.user.birth}" />'; 
+	      
 	    var data = {
 	        id: id
 	    };
@@ -97,7 +98,9 @@
 	                $('#emailInput').val(result.email);
 	                $('#nmInput').val(result.nm);
 	                $('#telInput').val(result.tel);  
-	                $('#sexInput').val(result.sex);     
+	                $('#sexInput').val(result.sex); 
+	                var age = fn_age(birth);     
+		            $('#ageInput').val(age);    
 	            } else {
 	                alert("유저 정보를 가져오는 데 실패했습니다.");
 	            }
@@ -114,40 +117,60 @@
 	
  	// 유저정보수정
 	$('#editBtn').on("click", function() {
-    var email = $('#emailInput').val();
-    var nm = $('#nmInput').val();
-    var tel = $('#telInput').val();  
-    var sex = $('#sexInput').val(); 
-    var id = '<c:out value="${sessionScope.user.id}" />';  
-      
-    var data = {
-        id: id,
-    	email: email,
-        nm: nm,
-        tel: tel,   
-        sex: sex
-    };
+	    var email = $('#emailInput').val();
+	    var nm = $('#nmInput').val();
+	    var tel = $('#telInput').val();  
+	    var sex = $('#sexInput').val(); 
+	    var id = '<c:out value="${sessionScope.user.id}" />';  
+	      
+	    var data = {
+	        id: id,
+	    	email: email,
+	        nm: nm,
+	        tel: tel,   
+	        sex: sex
+	    };
+	
+	    $.ajax({
+	        type: "post",
+	        url: "/updateInfo",
+	        data: data,     
+	        success: function(result) {
+	            console.log("성공 여부: " + result);
+	            alert("성공적으로 저장되었습니다.");
+	            
+	            // 서버에서 업데이트된 데이터를 가져와 입력란에 설정
+	            $('#emailInput').val(userInfo.email);
+	            $('#nmInput').val(userInfo.nm);  
+	            $('#telInput').val(userInfo.tel); 
+	            $('#sexInput').val(userInfo.sex);
+	        },
+	        error: function() {
+	            alert("서버 오류가 발생했습니다. 다시 시도해주세요.");
+	        }
+	    });
+	});      
+ 	
+	// 생년월일 만 나이 개산
+	function fn_age(birthday) {
 
-    $.ajax({
-        type: "post",
-        url: "/updateInfo",
-        data: data,     
-        success: function(result) {
-            console.log("성공 여부: " + result);
-                alert("성공적으로 저장되었습니다.");
-                
-                // 서버에서 업데이트된 데이터를 가져와 입력란에 설정
-                $('#emailInput').val(userInfo.email);
-                $('#nmInput').val(userInfo.nm);  
-                $('#telInput').val(userInfo.tel); 
-                $('#sexInput').val(userInfo.sex);
-            
-        },
-        error: function() {
-            alert("서버 오류가 발생했습니다. 다시 시도해주세요.");
-        }
-    });
-});    
+	   birthday = Number(birthday.replace(/-/gi,'')); // '-' 문자 모두 '' 변경
+	   
+	   let today = new Date(); // 오늘 날짜를 가져옴
+	   let yearNow = String(today.getFullYear()); // Date 객체의 년도를 가져옵니다.
+	   let monthNow = String(today.getMonth() + 1); // 객체의 월 정보를 가져옵니다. 1월은 0으로 표현됨을 주의해야 합니다. (0~11)
+	   let dayNow = String(today.getDate()); // Date 객체의 일자 정보를 가져옵니다. (0~31)
+	   
+	   monthNow = (monthNow < 10) ? '0' + monthNow : monthNow;
+	   dayNow = (dayNow < 10) ? '0' + dayNow : dayNow;
+	   
+	   today = Number(yearNow + monthNow + dayNow);   // 오늘날짜 숫자형으로 변환
+
+	   let age = Math.floor((today - birthday) / 10000);  // 소수점 버림
+
+	   return age;
+	}
+
  	
 	</script>
 </body>
