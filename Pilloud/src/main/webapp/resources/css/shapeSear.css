@@ -67,7 +67,7 @@ select img {
 	margin: 30px 0px 0px 45px;
 }
 
-#formul_sel, #div_sel {
+#formul_sel, #div_sel, #color_sel {
 	width: 400px;
 	padding: 10px 0px 10px 10px;
 	border-radius: 5px;
@@ -93,6 +93,12 @@ select img {
     font-weight : bolder;
 }
 
+#print_sel {
+	width: 390px;
+	padding: 10px 0px 10px 10px;
+	border-radius: 5px;
+	margin: 20px 0px 0px 45px;
+}
 
 
 /* 하단바 */

@@ -26,17 +26,30 @@
 			<form action="#">
 				<select name="shape" id="shape_sel">
 					<option value="">모양 선택</option>
-				</select> <select name="shape" id="formul_sel">
-					<!-- <option value="">제형 선택</option>
+				</select> 
+				<select name="shape" id="formul_sel">
+					<option value="">제형 선택</option>
 					<option value="원형">정제</option>
 					<option value="타원형">경질캡슐</option> 
-					<option value="정방형">연질캡슐</option> -->
-				</select> <select name="shape" id="div_sel">
+					<option value="정방형">연질캡슐</option>
+				</select> 
+				<select name="shape" id="color_sel">
+					<option value="분할선">색상 선택</option> 
+					<option value="">test</option>
+					<option value="test"></option>  
+					<option value="test"></option> 
+				</select>
+				<select name="shape" id="div_sel">
 					<option value="분할선">분할선 선택</option> 
 					<option value="">없음</option>
 					<option value="+">(+)형</option>  
 					<option value="-">(-)형</option> 
 				</select>
+				
+				<div>
+				<input type="text" name="print" size="100" id="print_sel" value="프린트를 입력하십시오.">
+				</div>
+				
 				<div id="submit">
 					<input type="button" value="검색하기"/>
 				</div>
