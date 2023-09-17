@@ -30,4 +30,23 @@ public class ShapeController {
         //return model;
  
     }
+    
+    @RequestMapping(value="selectChartn", method=RequestMethod.POST)
+    @ResponseBody
+    public List<String> selectChartn() throws Exception{
+    	
+        return shapeService.selectChartn();
+ 
+    }
+    
+    @RequestMapping(value="selectColor", method=RequestMethod.POST)
+    @ResponseBody
+    public List<String> selectColor() throws Exception{
+    	
+        return shapeService.selectColor();
+ 
+    }
+    
 }
+
+

@@ -29,15 +29,9 @@
 				</select> 
 				<select name="shape" id="formul_sel">
 					<option value="">제형 선택</option>
-					<option value="원형">정제</option>
-					<option value="타원형">경질캡슐</option> 
-					<option value="정방형">연질캡슐</option>
 				</select> 
 				<select name="shape" id="color_sel">
-					<option value="분할선">색상 선택</option> 
-					<option value="">test</option>
-					<option value="test"></option>  
-					<option value="test"></option> 
+					<option value="색상">색상 선택</option> 
 				</select>
 				<select name="shape" id="div_sel">
 					<option value="분할선">분할선 선택</option> 
@@ -85,8 +79,54 @@
 	 			if(result == null){
 	 				alert("모양 정보를 가져오는 데 실패했습니다.");	
 	 				return;
-	 			}
-	            fn_dataBind(result);
+	 			}  
+	            fn_dataBind('shape_sel', result, '모양');
+	        },
+	        error: function(xhr, status, error) {   
+	            console.error("Ajax 오류:", status, error);
+	            alert("오류가 발생했습니다. 다시 시도해주세요.");
+	        }
+	    });
+	    
+	    $.ajax({ 
+	        type: "post", 
+	        url: "/selectChartn",   
+	        data: {},       
+	        dataType: "json", // JSON 데이터 형식으로 응답을 받음을 명시
+	        contentType : 'application/json;charset=UTF-8',   
+	        beforeSend : function(xhr){
+	            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+	        },   
+	        success: function(result) { 
+	            console.log(result);  
+	 			if(result == null){
+	 				alert("제형 정보를 가져오는 데 실패했습니다.");	
+	 				return;
+	 			}     
+	 			fn_dataBind('formul_sel', result, '제형');  
+	        },
+	        error: function(xhr, status, error) {   
+	            console.error("Ajax 오류:", status, error);
+	            alert("오류가 발생했습니다. 다시 시도해주세요.");
+	        }
+	    });
+	    
+	    $.ajax({ 
+	        type: "post", 
+	        url: "/selectColor",   
+	        data: {},       
+	        dataType: "json", // JSON 데이터 형식으로 응답을 받음을 명시
+	        contentType : 'application/json;charset=UTF-8',   
+	        beforeSend : function(xhr){
+	            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+	        },   
+	        success: function(result) { 
+	            console.log(result);  
+	 			if(result == null){
+	 				alert("색상 정보를 가져오는 데 실패했습니다.");	
+	 				return;
+	 			}   
+	 			fn_dataBind('color_sel', result, '색상');  
 	        },
 	        error: function(xhr, status, error) {   
 	            console.error("Ajax 오류:", status, error);
@@ -96,14 +136,14 @@
 	    
 	});
 	
-	function fn_dataBind(shapeList){
-		$('#shape_sel').empty();
-		let appendHtml = '';
-		appendHtml += '<option value="">모양선택</option>';
-		$.each(shapeList, (index, item)=>{
-			appendHtml += '<option value="'+ item +'">'+ item +'</option>';
-		});
-		$('#shape_sel').append(appendHtml);
+	function fn_dataBind(id, dataList, aa) {
+	    $('#' + id).empty(); 
+	    let appendHtml = '';
+	    appendHtml += '<option value="">' + aa + ' 선택</option>';
+	    $.each(dataList, function (index, item) {
+	        appendHtml += '<option value="' + item + '">' + item + '</option>';
+	    });
+	    $('#' + id).append(appendHtml);
 	}
 	
 	</script>

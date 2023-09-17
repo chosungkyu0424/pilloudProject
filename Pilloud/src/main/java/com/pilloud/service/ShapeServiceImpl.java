@@ -20,4 +20,18 @@ public class ShapeServiceImpl implements ShapeService{
         
         return shapemapper.selectShape();
     }
+    
+    /* 제형 검색 */
+    @Override
+    public List<String> selectChartn() throws Exception {
+        
+        return shapemapper.selectChartn();
+    }
+    
+    /* 색상 검색 */
+    @Override
+    public List<String> selectColor() throws Exception {
+        
+        return shapemapper.selectColor();
+    }
 }

@@ -6,4 +6,28 @@
     <select id="selectShape" resultType="String">
         SELECT DISTINCT(DRUG_SHAPE) AS DRUG_SHAPE FROM PILL_MST;
     </select>
+    
+    <!-- 제형 선택 -->
+    <select id="selectChartn" resultType="String">
+        SELECT DISTINCT 
+		    CASE 
+		        WHEN SUBSTRING_INDEX(CHARTN, ' ', -1) LIKE '%이다%' 
+		        THEN TRIM(TRAILING '이다.' FROM SUBSTRING_INDEX(CHARTN, ' ', -1))
+		        ELSE SUBSTRING_INDEX(CHARTN, ' ', -1)
+		    END AS CHARTN
+		FROM PILL_MST;
+    </select>
+    
+    <!-- 색상 선택 -->
+    <select id="selectColor" resultType="String">
+        SELECT DISTINCT TRIM(BOTH ' ' FROM SUBSTRING_INDEX(SUBSTRING_INDEX(COLOR_CLASS1, ',', N), ',', -1)) AS COLOR
+		FROM PILL_MST
+		INNER JOIN (
+		    SELECT 1 AS N UNION ALL
+		    SELECT 2 UNION ALL
+		    SELECT 3 
+		) AS NUMS ON CHAR_LENGTH(TRIM(BOTH ' ' FROM COLOR_CLASS1)) - CHAR_LENGTH(REPLACE(TRIM(BOTH ' ' FROM COLOR_CLASS1), ',', '')) >= N-1
+		WHERE TRIM(BOTH ' ' FROM SUBSTRING_INDEX(SUBSTRING_INDEX(COLOR_CLASS1, ',', N), ',', -1)) IS NOT NULL
+		AND TRIM(BOTH ' ' FROM SUBSTRING_INDEX(SUBSTRING_INDEX(COLOR_CLASS1, ',', N), ',', -1)) <![CDATA[<>]]> '';
+    </select>
 </mapper>  
