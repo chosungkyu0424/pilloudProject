@@ -71,7 +71,7 @@
 			<img src="resources/img/main/my.png" alt="마이" class="my"/></a>   
 		</c:if>  
 		<c:if test="${ user == null }"> 
-			<a href="login" style="text-decoration-line:none;">  
+			<a href="signlog" style="text-decoration-line:none;">  
 			<img src="resources/img/main/my.png" alt="마이" class="my"/></a>   
 		</c:if>
 	</footer>

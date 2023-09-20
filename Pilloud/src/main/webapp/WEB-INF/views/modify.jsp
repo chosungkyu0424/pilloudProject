@@ -46,7 +46,7 @@
 	<!-- 상세 정보 입력 -->
 	<div class="detail">상세 정보</div><br>
 	<div class="dinfo">
-		<input type="number" class="box" name="age" placeholder="나이를 입력해주세요" id="ageInput"><br>
+		<input disabled type="number" class="box" name="age" placeholder="나이를 입력해주세요" id="ageInput"><br>
 		<input type="text" class="box" name="allergy" placeholder="알러지 성분을 입력해주세요" id="box">
 		<button type="button" name="add" class="addBtn">추가</button><br>
 		<ul>

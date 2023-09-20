@@ -127,3 +127,7 @@ img {
 	font-weight: 600;
 	font-size: medium;
 }
+
+input: disabled {
+	background: #000000;
+}
