@@ -44,8 +44,8 @@
 				<input type="text" name="print" size="100" id="print_sel" value="프린트를 입력하십시오.">
 				</div>
 				
-				<div id="submit">
-					<input type="button" value="검색하기"/>
+				<div id="submit">  
+					<input type="button" value="검색하기" onclick="fn_search()"/>
 				</div>
 			</form>
 		</div>
@@ -146,6 +146,42 @@
 	    $('#' + id).append(appendHtml);
 	}
 	
+	function fn_search(){ 
+		
+		var shape = $('#shape_sel').val();
+		var chartn = $('#formul_sel').val();  
+		var color = $('#color_sel').val();
+		var line = $('#div_sel').val();
+		var print = $('#print_sel').val(); 
+		
+		var data = { 
+					shape : shape, 
+	        		chartn : chartn, 
+	        	    color : color,
+	        	    line : line,
+	        	    print : print 
+		    };
+		console.log(data); 
+		$.ajax({
+		    type: "post",
+		    url: "/searchPill",
+		    data: JSON.stringify(data), // JSON 형식으로 데이터를 변환하여 전송
+		    contentType: "application/json; charset=UTF-8", // JSON 데이터임을 명시
+		    dataType: "json",
+		    success: function(result) {
+		        console.log(result);
+		        if (result == null) {
+		            alert("약물 정보를 가져오는 데 실패했습니다.");
+		            return;
+		        }
+		    },
+		    error: function(xhr, status, error) {
+		        console.error("Ajax 오류:", status, error);
+		        alert("오류가 발생했습니다. 다시 시도해주세요.");
+		    }
+		});   
+		
+	}
 	</script>
 </body>
 </html>

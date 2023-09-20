@@ -122,7 +122,8 @@
 	    var tel = $('#telInput').val();  
 	    var sex = $('#sexInput').val(); 
 	    var id = '<c:out value="${sessionScope.user.id}" />';  
-	      
+	    var age = $('#ageInput').val();   
+	    
 	    var data = {
 	        id: id,
 	    	email: email,

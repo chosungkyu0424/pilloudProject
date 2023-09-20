@@ -53,7 +53,7 @@
 		<a href="notice">공지사항</a><br><br><br>
 		<a href="termsOfService">약관 및 정책</a><br><br><br>
 		<a href="">버전 정보</a><br><br><br>
-		<a href="">로그아웃</a><br><br><br>
+		<a href="/logout.do" onclick="fn_logout()">로그아웃</a><br><br><br> 
 		<a href="">탈퇴하기</a><br>
 	</div><br>
 	
@@ -69,7 +69,9 @@
 	</footer>
 	
 <script type="text/javascript">
-    
+	function fn_logout(){
+		
+	}
 </script>
 </body>
 </html>

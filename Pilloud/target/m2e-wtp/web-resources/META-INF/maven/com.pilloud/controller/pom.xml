@@ -96,6 +96,11 @@
 		    <version>1.2.17</version>
 		</dependency>
 		 
+		<dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency> 
 		 
 		<!-- spring-test 추가 -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->

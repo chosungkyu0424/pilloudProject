@@ -16,17 +16,17 @@
 <body>  
 	<!-- 로고 + 검색 창 -->
 	<header>        
-	<!-- 로그인 하지 않은 상태 -->
+	<!-- 로그인 하지 않은 상태 
 	 <c:if test="${ user == null }">
 		<a href = "login">로그인</a>    
 		<a href = "signup">회원가입</a>  
-	</c:if>
+	</c:if> -->
 	
-	<!-- 로그인한 상태 -->      
+	<!-- 로그인한 상태    
      <c:if test="${ user != null }"> 
      	<span>${user.nm}님입니다.</span>
-     	<a href="/logout.do">로그아웃</a>
-    </c:if>
+     	<a href="/logout.do">로그아웃</a> 
+    </c:if>  -->  
                 
 	<div>
 		<img src="resources/img/LOGO_FULL.png" alt="" id="logo" />
@@ -65,8 +65,15 @@
 		<img src="resources/img/main/home.png" alt="메인홈" class="home" /></a>
 		<a href="news" style="text-decoration-line:none;">
 		<img src="resources/img/main/news.png" alt="컬럼/시사" class="news" /></a>
-		<a href="mypage" style="text-decoration-line:none;">  
-		<img src="resources/img/main/my.png" alt="마이" class="my" /></a>   
+		
+		<c:if test="${ user != null }">
+			<a href="mypage" style="text-decoration-line:none;">  
+			<img src="resources/img/main/my.png" alt="마이" class="my"/></a>   
+		</c:if>  
+		<c:if test="${ user == null }"> 
+			<a href="login" style="text-decoration-line:none;">  
+			<img src="resources/img/main/my.png" alt="마이" class="my"/></a>   
+		</c:if>
 	</footer>
 	
 	<script>
