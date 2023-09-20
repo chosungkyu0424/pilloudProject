@@ -38,9 +38,28 @@
 				for="radioEight">분할주의</label></li>
 		</ul>
 		<div id="submit">
-			<input type="button" value="검색하기" />
+			<input type="button" value="검색하기" onclick="search()" />
 		</div>
 	</div>
+
+	<script>
+		const radio_sel = document.getElementsByName("select");
+
+		function search() {
+			var j = 0;
+			for (var i = 0; i < radio_sel.length; i++) {
+				if (radio_sel[i].checked) {
+					j++;
+				}
+			}
+			if(j<1) {
+				alert("검색하실 주의사항 항목을 선택해주십시오.");
+			} else {
+				return true;
+			}
+		}
+	</script>
+
 	<!-- footer -->
 	<div class="footer">
 		<hr>

@@ -36,7 +36,7 @@
 		</div>
 
 		<!-- 버튼 -->
-		<button type="button" name="ok" class="okBtn">동의하고
+		<button type="button" name="ok" class="okBtn" onclick="location.href='login'">동의하고
 			계속하기</button>
 	</form>
 
