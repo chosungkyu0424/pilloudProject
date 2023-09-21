@@ -80,4 +80,14 @@ public class HomeController {
 	public String modify() {
 		return "modify";
 	}
+	
+	@RequestMapping(value = "/agree", method = RequestMethod.GET)
+	public String agree() {
+		return "agree";
+	}
+	
+	@RequestMapping(value = "/signlog", method = RequestMethod.GET)
+	public String signlog() {
+		return "signlog";
+	}
 }

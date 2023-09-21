@@ -24,6 +24,11 @@
   			)
   	</insert>
   	
+  	<!--  약관동의 -->
+  	<update id="updateAgree" parameterType="com.pilloud.model.UserVO">
+  		UPDATE USER_MST SET AGREE_YN1 = #{agreeYn1}, AGREE_YN2 = #{agreeYn2} WHERE ID = #{id}
+  	</update>
+  	
   	<!-- 아이디 중복검사 -->
   	<select id="idCheck" resultType="int">
   		SELECT COUNT(*) FROM USER_MST WHERE ID = #{id}

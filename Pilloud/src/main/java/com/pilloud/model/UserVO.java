@@ -25,9 +25,10 @@ public class UserVO {
 	//회원 전화번호
 	private String tel;
 	
-	//회원 약관동의1
+	//회원 약관동의1 
 	private String agreeYn1;
-		
+	private String agree_yn1;
 	//회원 약관동의2
 	private String agreeYn2;
+	private String agree_yn2;
 }

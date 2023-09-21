@@ -20,6 +20,14 @@ public class UserServiceImpl implements UserService{
 		
 	}
 	
+	/* 약관동의 */
+	@Override
+	public int updateAgree(UserVO user) throws Exception {
+		
+		return usermapper.updateAgree(user);
+		
+	}
+	
 	/* 아이디 중복 검사 */
 	@Override
 	public int idCheck(String id) throws Exception {

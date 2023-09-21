@@ -19,7 +19,7 @@
 	<form action="" id="signup_form" method="post">
 		<!-- <h2>회원가입</h2> -->
 		<h4 class="w3">아이디</h4><br>
-		<input type="text" name="id" placeholder="아이디 입력" class="id">
+		<input type="text" id="inputId" name="id" placeholder="아이디 입력" class="id">
 		<button type="button" name="checkId" class="checkid" id="checkIdBtn">중복 확인</button><br>
 		 
 		<div><span class="id_input_re_0">아이디를 입력하세요.</span></div>  
@@ -28,7 +28,7 @@
 		<div><span class="final_id_ck">아이디를 입력해주세요.</span></div>
 		
 		<h4 class="w4">비밀번호</h4><br>
-		<input type="password" name="pw" placeholder="8자리 이상" class="pw"><br>
+		<input type="password" id="inputPw" name="pw" placeholder="8자리 이상" class="pw"><br>
 		<div><span class="final_pw_ck">비밀번호를 입력해주세요.</span></div> 
 		 
 		<h4 class="w6">비밀번호 확인</h4><br>  
@@ -60,7 +60,7 @@
 		</div><br><br> 
 		
 		<!-- 가입하기 버튼 (로그인 화면 이동) --> 
-		<button disabled type="button" name="signup" class="signupBtn" onclick="location.href='agree'">가입하기</button>
+		<button disabled type="button" name="signup" class="signupBtn" onclick="fn_localStorage()">가입하기</button>
 	</form>
 
 	
@@ -271,6 +271,14 @@ $('.pwpw').on("propertychange change keyup paste input", function(){
 		element.checked = true;
 	} 
 
+ 	function fn_localStorage(){
+ 	// 회원 가입 페이지에서 데이터를 로컬 스토리지에 저장
+ 		var userId = $('#inputId').val(); // 사용자가 입력한 아이디 
+ 		var userPassword = $('#inputPw').val(); // 사용자가 입력한 패스워드
+
+ 		localStorage.setItem("id", userId);
+ 		localStorage.setItem("pw", userPassword); 
+ 	}
 </script>
 
 </body>

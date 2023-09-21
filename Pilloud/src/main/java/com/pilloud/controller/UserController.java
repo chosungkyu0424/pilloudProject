@@ -53,9 +53,24 @@ public class UserController {
         /* 회원가입 쿼리 실행 */
         userservice.userSignup(user); 
         
-		return "redirect:/login";
+		return "redirect:/agree";
 		
 	}
+
+	
+	//약관동의
+	@ResponseBody
+	@RequestMapping(value="/updateAgree", method=RequestMethod.POST)
+	public int updateAgree(UserVO user) throws Exception{
+		
+		int result = userservice.updateAgree(user); 
+		if(result != 0) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+		
 	
 	// 아이디 중복 검사
 	@RequestMapping(value = "/idChk", method = RequestMethod.POST)
