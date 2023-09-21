@@ -13,6 +13,7 @@ public class PillVO {
 	
 	//품목명
 	private String item_name;
+	private String itemNm;
 	
 	//업체일련번호
 	private String entp_seq;

@@ -90,4 +90,9 @@ public class HomeController {
 	public String signlog() {
 		return "signlog";
 	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list() {
+		return "list";
+	}
 }
