@@ -9,7 +9,7 @@ html, body {
 	margin: 0 auto;
 	width: 500px;
 	height: 100%;
-	overflow: hidden;
+	overflow: auto;  
 }
 hr {
 	border-width : 1px 0px 0px 0px; 

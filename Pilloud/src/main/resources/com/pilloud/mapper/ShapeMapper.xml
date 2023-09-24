@@ -33,7 +33,7 @@
     
     <!-- 약물 검색리스트 -->
     <select id="searchPill" parameterType="com.pilloud.model.PillVO" resultType="com.pilloud.model.PillVO">
-    	SELECT ITEM_SEQ, ITEM_NAME, DRUG_SHAPE, CHARTN, COLOR_CLASS1, COLOR_CLASS2, LINE_FRONT, LINE_BACK, PRINT_FRONT, PRINT_BACK
+    	SELECT  * <!--ITEM_SEQ, ITEM_NAME, DRUG_SHAPE, CHARTN, COLOR_CLASS1, COLOR_CLASS2, LINE_FRONT, LINE_BACK, PRINT_FRONT, PRINT_BACK-->
 		FROM PILL_MST 
 		WHERE 1=1
 		<if test='shape != null and shape != ""' >
