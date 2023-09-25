@@ -49,8 +49,8 @@
 	</div>
 	
 	<!-- 2번째 줄 메뉴 -->
-	<div id="fmenu">
-	
+	<div id="fmenu">  
+		<a href="map" style="text-decoration-line:none;">
 		<img src="resources/img/main/menu4.png" alt="약국찾기" class="menu4" />
 		<a href="notice" style="text-decoration-line:none;">
 		<img src="resources/img/main/menu5.png" alt="공지사항" class="menu5" /> </a>
