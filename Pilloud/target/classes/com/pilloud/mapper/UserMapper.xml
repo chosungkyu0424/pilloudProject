@@ -36,12 +36,12 @@
   	
   	<!-- 로그인 -->
     <select id="userLogin" resultType="com.pilloud.model.UserVO">
-        SELECT ID, PW, NM, BIRTH, EMAIL, TEL, SEX FROM USER_MST WHERE ID = #{id}
+        SELECT ID, PW, NM, BIRTH, EMAIL, TEL, SEX, ALLERGY, MEDICINE, DISEASE, PREG_YN FROM USER_MST WHERE ID = #{id}
     </select>
     
     <!-- 유저정보수정 -->
     <update id="updateInfo" parameterType="com.pilloud.model.UserVO">
-        UPDATE USER_MST SET EMAIL = #{email}, TEL = #{tel}, SEX = #{sex} WHERE ID = #{id}
+        UPDATE USER_MST SET EMAIL = #{email}, TEL = #{tel}, SEX = #{sex}, ALLERGY = #{allergy}, MEDICINE = #{medicine}, DISEASE = #{disease}, PREG_YN = #{pregnant} WHERE ID = #{id}
     </update>
     
     

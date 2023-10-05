@@ -28,7 +28,21 @@ public class UserVO {
 	//회원 약관동의1 
 	private String agreeYn1;
 	private String agree_yn1;
+	
 	//회원 약관동의2
 	private String agreeYn2;
 	private String agree_yn2;
+	
+	//알러지 
+	private String allergy;
+	
+	//복용중인 약
+	private String medicine;
+	
+	//지병
+	private String disease;
+	
+	//임신여부
+	private String pregnant;
+	private String preg_yn;
 }
