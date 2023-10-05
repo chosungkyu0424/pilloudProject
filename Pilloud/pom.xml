@@ -191,6 +191,13 @@
 		    <version>1.18.28</version>
 		    <scope>provided</scope>
 		</dependency>
+		<!-- json객체 처리 -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.12.5</version> <!-- 최신 버전 사용 가능 -->
+		</dependency>
+		
 	
 		<!-- security -->
         <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->

@@ -4,11 +4,16 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.ServletOutputStream;
@@ -31,6 +36,11 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Service
 public class CommonService {
 	public void sendEmail(String email, String name, HttpSession session) {
@@ -41,7 +51,7 @@ public class CommonService {
 	// 공공 데이터 REST API 요청 처리=========================================================================
 	public String xml_list(StringBuilder url) {
 		String result = url.toString();
-		
+		System.out.print(url);
 		try {
 			HttpURLConnection conn
 			 = (HttpURLConnection)new URL( result ).openConnection();
@@ -104,5 +114,144 @@ public class CommonService {
 	    }
 	}
 	
+	public String makeUrl(Map<String, Object> map) {
+		String url="";
+		map.put("itemName", URLEncoding(map.get("itemName").toString()));
+		if(map.containsKey("typeName")) {
+			map.put("typeName", URLEncoding(map.get("typeName").toString()));
+			url = map.get("endpoint").toString()+"?serviceKey="+map.get("serviceKey").toString()
+					+"&typename="+map.get("typeName").toString()+"&"+map.get("default").toString()+"&itemName="+map.get("itemName").toString();
+		}else {
+			url = map.get("endpoint").toString()+"?"+map.get("infoMap").toString();
+		}
+		
+		return url;
+	}
 	
+	public String callAPI(String urlString) {
+		System.out.print(urlString);
+		String body = "";
+        try {
+            // 외부 API의 엔드포인트 URL 설정
+            URL url = new URL(urlString);
+
+            // HttpURLConnection 객체 생성
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+            // 요청 방식 설정 (GET 요청)
+            conn.setRequestMethod("GET");
+
+            // 응답 코드 확인
+            int responseCode = conn.getResponseCode();
+            System.out.println("Response Code: " + responseCode);
+
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                // API 응답 데이터를 읽기 위한 BufferedReader 생성
+                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                // 응답 데이터를 읽어서 StringBuilder에 저장
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+
+                // API 응답 출력
+                System.out.println("API Response: " + response.toString());
+                body = response.toString();
+            } else {
+                System.out.println("API Request Failed");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+		
+		return body;
+	}
+	public String URLEncoding(String korString) {
+		String result="";
+        try {
+            // UTF-8로 URL 인코딩
+            result = URLEncoder.encode(korString, "UTF-8");
+
+            // 결과 출력
+            System.out.println("인코딩된 문자열: " + result);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+	
+	public JsonNode jsonStringToMap(String jsonString) {
+		JsonNode resultMap = null;
+		try {
+			ObjectMapper objectMapper = new ObjectMapper();
+            resultMap = objectMapper.readTree(jsonString);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+		return resultMap;
+	}
+	public List stringToArray (String jsonString) {
+		List<Map<String, Object>> arrayList = new ArrayList<>();
+		try {
+            // ObjectMapper 초기화
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            // JSON 문자열을 ArrayList로 파싱
+            arrayList = objectMapper.readValue(jsonString, ArrayList.class);
+
+            // ArrayList 내용 출력
+            for (Object item : arrayList) {
+                System.out.println("Item: " + item);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+		return arrayList;
+	}
+	public Object mapToBodyMap(JsonNode bodyMap) {
+		List<Map<String, Object>> result = new ArrayList<>();
+		Object body = bodyMap.get("body");
+		return body;
+		
+	}
+	
+	public List mainCallAPI(Map<String, Object> urlInfo) throws JsonProcessingException {
+		String url = makeUrl(urlInfo);
+		String response = callAPI(url);
+		JsonNode bodyMap = jsonStringToMap(response);
+		Object bodyMapString = mapToBodyMap(bodyMap);
+		List<Map<String, Object>> result = new ArrayList<>();
+		result = stringToArr(bodyMapString.toString());
+		System.out.print(result);
+		return result;
+	}
+	public List stringToArr(String jsonString) {
+//		List result = new ArrayList<>();
+		ObjectMapper objectMapper = new ObjectMapper();
+		// JSON 문자열을 Map으로 파싱
+        Map<String, Object> data = new HashMap<>();
+		try {
+			data = objectMapper.readValue(jsonString, Map.class);
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+        // "items" 키의 값(배열)을 추출하여 리스트로 변환
+        List<Map<String, Object>> items = (List<Map<String, Object>>) data.get("items");
+
+        // 리스트 내용 출력
+        for (Map<String, Object> item : items) {
+            System.out.println("Item: " + item);
+        }
+        return items;
+	}
 }
