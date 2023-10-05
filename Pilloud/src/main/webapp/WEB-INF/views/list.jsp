@@ -33,6 +33,7 @@
 		<p>
 			<span style="color: red; font-size: 5px;">●</span>복용금지
 		</p>
+		<hr>
 		<!-- List -->
 		<div id="pillList">
 			<!-- <ul>
@@ -47,7 +48,7 @@
 			</ul>   
 			<hr> -->  
 		</div>
-	</div>
+	</div><br><br><br>
 
 	<script>
 	$(document).ready(function () {
@@ -66,7 +67,7 @@
                     src: 'resources/img/LOGO_FULL.png',
                     alt: '',
                     id: 'sub',
-                    width: '100',
+                    width: '80',
                     height: '50'
                 }));
 
@@ -80,8 +81,8 @@
 
                 var li3 = $('<li>').append($('<img>', {
                     src: 'resources/img/next.png',
-                    width: '25',
-                    height: '25',
+                    width: '20',
+                    height: '20',
                     id: 'next'
                 }));
 
@@ -108,7 +109,7 @@
 
 	<!-- footer -->
 	<div class="footer">
-		<hr>
+		<hr style="margin-top: 0; margin-bottom: 8px;">
 		<a href="main" style="text-decoration-line: none;"> <img
 			src="resources/img/LOGO_FULL.png" alt="메인홈" class="home" />
 		</a>

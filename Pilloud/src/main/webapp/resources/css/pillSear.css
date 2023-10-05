@@ -9,18 +9,26 @@ html, body {
 	width: 500px;
 	height: 100%;
 	overflow: auto; 
+	
+ 	-ms-overflow-style: none;
 }
+
+::-webkit-scrollbar {
+	display: none;
+} 
+
 hr {
 	border-width : 1px 0px 0px 0px; 
 	border-style : solid;
 	border-color: lightgrey;
 	height : 1px;
+	margin-bottom: 0;
 }
 header {
 	position: fixed;
 	top: 0;
 	height: 50px;
-	width: 500px;
+	width: 499px;
 	background-color: #C4D89D;
 }
 
@@ -43,17 +51,32 @@ p {
 	font-size : 12px;
 	text-align : right;
 	display:inline-block;
-	border-bottom:1px solid lightgrey;
+/* 	border-bottom:1px solid lightgrey; */
 	width : 100%;
-	padding : 0px 0px 10px 0px;
+/* 	padding : 0px 0px 10px 0px; */
+ 	margin-bottom: 4px;
 }
 #pillList ul{
 	list-style:none;
 	display : block;
-	padding : 0px 0px 10px 40px;
+	padding : 0px 0px 10px 20px;
 }
 #pillList ul li {
 	display : inline-block;
+}
+#pillList .title {
+	font-size: small;
+	font-weight: bold;
+	width: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline-block;
+}
+#pillList #next {
+	margin-left: 10px;
+	margin-bottom: 13px;
+/* 	display : inline-block; */
 }
 .company {
 	text-align : left;
@@ -77,10 +100,11 @@ p {
 }
 
 .footer {
-	position: fixed;
+ 	position: fixed;
 	bottom: 0;
 	height: 70px;
-	width: 500px;
+	width: 499px;
+ 	background-color: #ffffff;
 }
 
 .home {

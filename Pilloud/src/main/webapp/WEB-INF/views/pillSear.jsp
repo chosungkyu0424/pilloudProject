@@ -24,33 +24,37 @@
 		</div>
 	</header>
 	
-	<div style="margin-top: 50px;">
-		<p>
-			<span style="color: red; font-size: 5px;">●</span>복용금지
-		</p>
-		<!-- List -->
-		<div id="pillList">
-			<!-- <ul>
-				<li><img src="resources/img/LOGO_FULL.png" alt="" id="sub"
-					width="100" height="50"></li>
-				<li>
-					<div class="company" id="company">회사이름</div>
-					<div class="title" id="itemName">약이름</div>
-				</li>
-				<li><img src="resources/img/next.png" width="25" height="25"
-					id="next"></li>
-			</ul>   
-			<hr> -->  
-		</div>
-	</div> 
+	<div class="scrollBar">
+		<div style="margin-top: 50px;">
+			<p>
+				<span style="color: red; font-size: 5px;">●</span>복용금지
+			</p>
+			<hr>
+			<!-- List -->
+			<div id="pillList">
+				<!-- <ul>
+					<li><img src="resources/img/LOGO_FULL.png" alt="" id="sub"
+						width="100" height="50"></li>
+					<li>
+						<div class="company" id="company">회사이름</div>
+						<div class="title" id="itemName">약이름</div>
+					</li>
+					<li><img src="resources/img/next.png" width="25" height="25"
+						id="next"></li>
+				</ul>   
+				<hr> -->  
+			</div>
+		</div> 
+	</div><br><br><br>
 	
 	<!-- footer -->
 	<div class="footer">
-		<hr>
+		<hr style="margin-top: 0; margin-bottom: 8px;">
 		<a href="main" style="text-decoration-line: none;"> <img
 			src="resources/img/LOGO_FULL.png" alt="메인홈" class="home" />
 		</a>
 	</div>
+
 	
 	<script>
 	var resultList; 
@@ -70,7 +74,7 @@
                     src: 'resources/img/LOGO_FULL.png',
                     alt: '',
                     id: 'sub',
-                    width: '100',
+                    width: '80',
                     height: '50'
                 }));
 
@@ -84,8 +88,8 @@
 
                 var li3 = $('<li>').append($('<img>', {
                     src: 'resources/img/next.png',
-                    width: '25',
-                    height: '25',
+                    width: '20',
+                    height: '20',
                     id: 'next'
                 }));
 
