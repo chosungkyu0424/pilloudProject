@@ -16,7 +16,12 @@
 	<!-- 상단 -->
 	<div id="searcher">
 		<a href="main" style="text-decoration-line: none;"> <img
-			src="resources/img/left_arrow.png" alt="화살표" id="arrow" /></a>
+			src="resources/img/left_arrow.png" alt="화살표" id="arrow" onclick="history_back()"/></a>  
+			<script>
+				function history_back() {  
+					history.back()
+				}
+			</script>  
 		<h3 class=title>모양으로 검색</h3>
 	</div>
 
@@ -75,7 +80,7 @@
 	            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
 	        },   
 	        success: function(result) { 
-	            console.log(result);  
+	            console.log(result);       
 	 			if(result == null){
 	 				alert("모양 정보를 가져오는 데 실패했습니다.");	
 	 				return;
@@ -119,7 +124,7 @@
 	        contentType : 'application/json;charset=UTF-8',   
 	        beforeSend : function(xhr){
 	            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-	        },   
+	        },   																																						
 	        success: function(result) { 
 	            console.log(result);  
 	 			if(result == null){
@@ -170,8 +175,7 @@
 	        contentType: "application/json; charset=UTF-8",
 	        dataType: "json",
 	        success: function (result) {
-	            console.log(result);
-        
+	            console.log(result); 
 	         	// 검색 결과를 로컬 스토리지에 저장
 	            localStorage.setItem('searchResult', JSON.stringify(result));
 

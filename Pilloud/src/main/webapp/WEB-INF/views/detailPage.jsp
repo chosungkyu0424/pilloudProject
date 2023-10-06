@@ -1,3 +1,6 @@
+<%@ page import="java.net.URLDecoder" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Map" %>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -9,13 +12,24 @@
 <title>상세 페이지</title>
 </head>
 <body>
+	<%
+        String itemImage = request.getParameter("item_image");
+        String entpName = request.getParameter("entp_name");
+        String itemName = request.getParameter("item_name");
+        // URL 디코딩
+        itemImage = URLDecoder.decode(itemImage, "EUC-KR");
+        entpName = URLDecoder.decode(entpName, "EUC-KR");
+        itemName = URLDecoder.decode(itemName, "EUC-KR");
+    %>
+    
 	<!-- 상세 페이지 상단 -->
 	<div class="top">
 		<img src="resources/img/left.png" alt="화살표" id="arrow"
 			onclick="history_back()" />
-		<script>
+		<script>  
 			function history_back() {
-				history.back()
+				history.back();    
+				//window.location.href = 'pillSear';
 			}
 		</script>
 		<h3 class=title>제목</h3>
@@ -24,14 +38,13 @@
 
 	<!-- 큰 이미지 부분 -->
 	<div>
-		<img src="resources/img/LOGO_FULL.png" alt="" id="img" width="300"
-			height="250">
+		<img src="<%= itemImage %>" id="img" alt="" width="300" height="250"> 
 	</div>
 
 	<!-- 회사명/약품명 -->
 	<div>
-		<p class="company">회사명</p>
-		<h3 class="pill_name">약품명</h3>
+		<p>회사명: <%= entpName %></p>     
+		<h3 class="pill_name"><%= itemName %></h3>
 	</div>
 	<hr>
 

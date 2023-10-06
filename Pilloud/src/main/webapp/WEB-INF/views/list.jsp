@@ -20,7 +20,7 @@
 				onclick="history_back()" /></a>
 			<script>
 				function history_back() {
-					history.back()
+					history.back();   
 				}
 			</script>
 			<div id="search">
