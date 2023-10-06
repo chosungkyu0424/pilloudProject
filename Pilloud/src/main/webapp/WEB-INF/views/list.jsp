@@ -79,12 +79,18 @@
                     text: result[i].item_name // 로컬 스토리지에서 item_name 가져오기
                 }));
 
-                var li3 = $('<li>').append($('<img>', {
+                var encodedItemImage = encodeURIComponent(result[i].item_image);
+                var encodedEntpName = encodeURIComponent(result[i].entp_name);
+                var encodedItemName = encodeURIComponent(result[i].item_name);
+
+                var li3 = $('<li>').append($('<a>', {
+                    href: 'detailPage?item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName,  
+                }).append($('<img>', {
                     src: 'resources/img/next.png',
                     width: '20',
                     height: '20',
                     id: 'next'
-                }));
+                })));   
 
                 // ul에 li들 추가
                 ul.append(li1).append(li2).append(li3);
