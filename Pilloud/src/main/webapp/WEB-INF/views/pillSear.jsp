@@ -71,12 +71,12 @@
 
                 // li 요소 생성
                 var li1 = $('<li>').append($('<img>', {
-                    src: 'resources/img/LOGO_FULL.png',
-                    alt: '',
-                    id: 'sub',
-                    width: '80',
-                    height: '50'
-                }));
+				    src: result[i].item_image, // result[i].item_image에는 이미지 URL이 들어있다고 가정합니다.
+				    alt: '',
+				    id: 'sub',
+				    width: '80',
+				    height: '50'
+				}));   
 
                 var li2 = $('<li>').append($('<div>', {
                     class: 'company',

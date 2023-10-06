@@ -40,8 +40,8 @@
 					<option value="-">(-)형</option> 
 				</select>
 				
-				<div>
-				<input type="text" name="print" size="100" id="print_sel" value="프린트를 입력하십시오.">
+				<div>  
+				<input type="text" name="print" size="100" id="print_sel" placeholder="프린트를 입력하세요.">
 				</div>
 				
 				<div id="submit">  
