@@ -28,11 +28,12 @@
 			이메일로 시작하기
 		</button><br>
 		
+		<div class="login">
 		<p>이미 계정이 있으신가요?</p>
 		
-		<button type="button" name="btn2" class="btn2" onclick="location.href='login'">
-			로그인하기
-		</button><br>
+		<a href="login">로그인하기</a>
+		</div>
+		<br>
 	</div>
 	
 <!-- 	<div class="bottom">

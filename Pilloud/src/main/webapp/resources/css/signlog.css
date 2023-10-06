@@ -36,6 +36,7 @@ html, body {
 	text-align: center;
 	position: relative;
 	top: 70px;
+	margin-top:200px;
 }
 
 .btn1 {
@@ -70,6 +71,14 @@ img {
 /* 	display: grid;
 	align-items: center; */
 	vertical-align: middle;
+}
+.login {
+	font-size : 13px;
+}
+.login a{
+	color : #1E90FF;
+	font-weight : bold;
+	text-decoration-line:none;
 }
 
 .bottom {
