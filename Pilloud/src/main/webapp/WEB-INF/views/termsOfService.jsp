@@ -12,8 +12,8 @@
 	<header>
 	<div>
 	<a href="#" onclick="history.back();">
-		<img src="resources/img/left.png" alt="화살표" id="arrow" /></a>
-		<div class=title>이용약관</div>
+		<img src="resources/img/left_arrow.png" alt="화살표" id="arrow" /></a>
+		<h3 class=title>이용약관</h3>
 	</div>
 	</header>
 	<hr>

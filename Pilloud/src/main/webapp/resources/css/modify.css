@@ -7,28 +7,34 @@ html, body {
 	width: 500px;
 	height: 100%;
 	overflow: auto;
+	
+	-ms-overflow-style: none;
 }
 
+::-webkit-scrollbar {
+	display: none;
+} 
+
 header {
-	/* position: fixed; */
+/* 	position: fixed; */
 	top: 0;
 	height: 50px;
-	width: 500px;
-	background-color: white;
-	border-bottom : 1px solid lightgrey;
+	width: 499px;
+	background-color: #C4D89D;
+/* 	border-bottom : 1px solid lightgrey; */
 }
 
 #arrow {
 	float: left;
 	width: 25px;
 	height: 20px;
-	margin: 16px 0px 10px 15px;
+	margin: 18px 0px 10px 15px;
 }
 
 .title {
 	float : right;
-	margin : 15px 200px 0px 0px;
-	font-weight: bold;
+	margin : 15px 190px 0px 0px;
+	color: #ffffff;
 }
 
 /* h3 {
@@ -117,15 +123,16 @@ img {
 }
 
 #editBtn {
-	/* position: fixed; */
-	border: none;
-	left: 0;
-	right: 0;
-	width: 483px;
-	height: 4rem;
-	margin-top: 30px;
-	font-weight: 600;
-	font-size: medium;
+	text-align : center;
+	width : 390px;
+	padding : 10px;
+	margin : 40px 0px 30px 45px;
+	border: 0px;
+    border-radius : 20px;
+	background-color: #C4D89D;
+    color: #fff;
+    font-size : 15px;
+    font-weight : bolder;
 }
 
 input: disabled {

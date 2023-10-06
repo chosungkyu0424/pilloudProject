@@ -66,7 +66,7 @@
 	
 	<!-- footer -->
 	<footer>
-		<hr>
+		<hr style="margin-top: 0; margin-bottom: 8px;">
 		<a href="main" style="text-decoration-line:none;">
 		<img src="resources/img/LOGO_FULL.png" alt="메인홈" class="home" /> </a>
 	</footer> 

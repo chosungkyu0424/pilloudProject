@@ -421,7 +421,7 @@ QR코드 등록 정보:삭제 시점으로부터6개월 보관
 		        data: data,     
 		        success: function(result) {
 		            console.log("성공 여부: " + result);
-		            alert("성공적으로 저장되었습니다.");
+		            alert("회원가입이 완료되었습니다.");
 		            window.location.href = "/login"; // 이동하고자 하는 URL로 변경        
 		        },
 		        error: function() {
