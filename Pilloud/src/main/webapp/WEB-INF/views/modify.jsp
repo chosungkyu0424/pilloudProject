@@ -17,8 +17,8 @@
 	<header>
 	<div>
 	<a href="#" onclick="history.back();">
-		<img src="resources/img/left.png" alt="화살표" id="arrow" /></a>
-		<div class=title>나의 정보 수정</div>
+		<img src="resources/img/left_arrow.png" alt="화살표" id="arrow" /></a>
+		<h3 class=title>나의 정보 수정</h3>
 	</div>
 	</header>
 	

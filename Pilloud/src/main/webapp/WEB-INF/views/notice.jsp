@@ -11,7 +11,7 @@
 <body>
 	<!-- 공지사항 -->
 	<div class="top">
-	<a href="main">
+	<a href="#" onclick="history.back();">
 		<img src="resources/img/left.png" alt="화살표" id="arrow" /></a>
 		<h3 class=title>공지사항</h3>
 	</div>

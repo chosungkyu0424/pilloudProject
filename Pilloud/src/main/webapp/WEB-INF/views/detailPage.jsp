@@ -43,7 +43,7 @@
 
 	<!-- 회사명/약품명 -->
 	<div>
-		<p>회사명: <%= entpName %></p>     
+		<p style="margin-left:45px;"><%= entpName %></p>     
 		<h3 class="pill_name"><%= itemName %></h3>
 	</div>
 	<hr>

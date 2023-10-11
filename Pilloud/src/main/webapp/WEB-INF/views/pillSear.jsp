@@ -18,7 +18,7 @@
 			<a href="main" style="text-decoration-line: none;"> <img  
 				src="resources/img/left_arrow.png" alt="화살표" id="arrow" /></a>
 			<div id="search">
-				<input type="text" placeholder="의약품명을 입력해주세요" class="text" id="inputPillNm"/> <img
+				<input type="text" placeholder="의약품명을 입력해주세요" class="text" id="inputPillNm"  onkeyup="if(window.event.keyCode==13){fn_search()}"/> <img
 					src="resources/img/search.png" alt="" id="icon" onclick="fn_search()" />
 			</div>
 		</div>

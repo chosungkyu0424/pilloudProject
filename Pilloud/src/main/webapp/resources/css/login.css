@@ -77,7 +77,8 @@ footer img {
     font-family: "paybooc-Light", sans-serif;
     text-decoration: none;
     font-weight: 600;
-/*     background-color: #C4D89D; */
+    background-color: #C4D89D;
+    color: #ffffff;
 }
 /* 로그인 실패시 경고글 */
 .login_warn{

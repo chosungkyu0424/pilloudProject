@@ -96,16 +96,6 @@ public class HomeController {
 		return "list";
 	}
 	
-	@RequestMapping(value = "/map", method = RequestMethod.GET)
-	public String map() {
-		return "map";
-	}
-	
-	@RequestMapping(value = "/subscribe", method = RequestMethod.GET)
-	public String subscribe() {
-		return "subscribe";
-	}
-	
 	@RequestMapping(value = "/detailPage", method = RequestMethod.GET)
 	public String detailPage() {
 		return "detailPage";
@@ -114,5 +104,30 @@ public class HomeController {
 	@RequestMapping(value = "/bookmark", method = RequestMethod.GET)
 	public String bookmark() {
 		return "bookmark";
+	}
+	
+	@RequestMapping(value = "/caution", method = RequestMethod.GET)
+	public String caution() {
+		return "caution";
+	}
+	
+	@RequestMapping(value = "/map", method = RequestMethod.GET)
+	public String map() {
+		return "map";
+	}
+	
+	@RequestMapping(value = "/question", method = RequestMethod.GET)
+	public String question() {
+		return "question";
+	}
+	
+	@RequestMapping(value = "/subscribe", method = RequestMethod.GET)
+	public String subscribe() {
+		return "subscribe";
+	}
+	
+	@RequestMapping(value = "/termsOfService", method = RequestMethod.GET)
+	public String termsOfService() {
+		return "termsOfService";
 	}
 }
