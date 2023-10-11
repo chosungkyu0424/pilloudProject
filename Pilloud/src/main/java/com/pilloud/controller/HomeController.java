@@ -95,4 +95,24 @@ public class HomeController {
 	public String list() {
 		return "list";
 	}
+	
+	@RequestMapping(value = "/map", method = RequestMethod.GET)
+	public String map() {
+		return "map";
+	}
+	
+	@RequestMapping(value = "/subscribe", method = RequestMethod.GET)
+	public String subscribe() {
+		return "subscribe";
+	}
+	
+	@RequestMapping(value = "/detailPage", method = RequestMethod.GET)
+	public String detailPage() {
+		return "detailPage";
+	}
+	
+	@RequestMapping(value = "/bookmark", method = RequestMethod.GET)
+	public String bookmark() {
+		return "bookmark";
+	}
 }
