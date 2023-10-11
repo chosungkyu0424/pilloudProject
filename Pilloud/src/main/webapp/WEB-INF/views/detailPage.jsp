@@ -19,7 +19,7 @@
         // URL 디코딩
         itemImage = URLDecoder.decode(itemImage, "EUC-KR");
         entpName = URLDecoder.decode(entpName, "EUC-KR");
-        itemName = URLDecoder.decode(itemName, "EUC-KR");
+        itemName = URLDecoder.decode(itemName, "EUC-KR");  
     %>
     
 	<!-- 상세 페이지 상단 -->

@@ -1,28 +1,135 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>    
+<!DOCTYPE html> 
 <html>
 <head>
-<meta charset="UTF-8">
-<link href="../resources/css/bookmark.css?after" rel="stylesheet">
-<title>ìì£¼ ì°¾ì•„ë³´ëŠ” ì˜ì•½í’ˆ</title>
+<meta charset="EUC-KR">   
+<link rel="stylesheet" href="resources/css/bookmark.css" type="text/css">
+<title>ÀÚÁÖ Ã£¾Æº¸´Â ÀÇ¾àÇ°</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>    
 </head>
 <body>
-	<!-- ìƒë‹¨ë°” -->
+	<!-- »ó´Ü¹Ù -->
 	<header>
 	<div>
 	<a href="#" onclick="history.back();">
-		<img src="resources/img/left.png" alt="í™”ì‚´í‘œ" id="arrow" /></a>
-		<div class=title>ìì£¼ ì°¾ì•„ë³´ëŠ” ì˜ì•½í’ˆ</div>
+		<img src="resources/img/left.png" alt="È­»ìÇ¥" id="arrow" /></a>
+		<div class=title>ÀÚÁÖ Ã£¾Æº¸´Â ÀÇ¾àÇ°</div>
 	</div>
 	</header>
 	<hr>
+	
+	<div class="scrollBar">
+		<div style="margin-top: 50px;">
+			<p>
+				<span style="color: red; font-size: 5px;">¡Ü</span>º¹¿ë±İÁö
+			</p>
+			<hr>
+			<!-- List -->
+			<div id="pillList">
+				<!-- <ul>
+					<li><img src="resources/img/LOGO_FULL.png" alt="" id="sub"
+						width="100" height="50"></li>
+					<li>
+						<div class="company" id="company">È¸»çÀÌ¸§</div>
+						<div class="title" id="itemName">¾àÀÌ¸§</div>
+					</li>
+					<li><img src="resources/img/next.png" width="25" height="25"
+						id="next"></li>
+				</ul>   
+				<hr> -->  
+			</div>
+		</div> 
+	</div><br><br><br>
 	
 	<!-- footer -->
 	<footer>
 		<hr>
 		<a href="main" style="text-decoration-line:none;">
-		<img src="resources/img/LOGO_FULL.png" alt="ë©”ì¸í™ˆ" class="home" /> </a>
+		<img src="resources/img/LOGO_FULL.png" alt="¸ŞÀÎÈ¨" class="home" /> </a>
 	</footer>
+	
+	<script>
+	
+	$(document).ready(function(){   
+		fn_selectBookmark();
+	});      
+	
+	var resultList;     
+	function fn_selectBookmark() {
+	    $.ajax({  
+	        type: "post",
+	        url: "selectBookmark",   
+	        contentType: "application/json; charset=UTF-8",
+	        dataType: "json",   
+	        success: function(result) {
+	            console.log("Success!");
+	            console.log(result);   
+	            resultList = result;
+	            fn_addList(); 
+
+	            if (result == null) {
+	                alert("ºÏ¸¶Å© ¸®½ºÆ®¸¦ °¡Á®¿À´Â µ¥ ½ÇÆĞÇß½À´Ï´Ù.");
+	                return;
+	            }
+	        },
+	        error: function(xhr, status, error) {
+	            //console.error("Ajax ¿À·ù:", status, error);
+	            alert("¿À·ù°¡ ¹ß»ıÇß½À´Ï´Ù. ´Ù½Ã ½ÃµµÇØÁÖ¼¼¿ä.");
+	        }
+	    });
+	}   
+	
+	function fn_addList() {
+	    var result = resultList;
+	    var pillList = $('#pillList'); 
+	    if (result && result.length > 0) {
+	        // °á°ú°¡ ÀÖÀ¸¸é ¸®½ºÆ®¸¦ »ı¼º
+	        for (var i = 0; i < result.length; i++) {
+	            // ul ¿ä¼Ò »ı¼º
+	            var ul = $('<ul>');
+
+	            // li ¿ä¼Ò »ı¼º
+	            var li1 = $('<li>').append($('<img>', {
+	                src: result[i].item_image,
+	                alt: '',
+	                id: 'sub',
+	                width: '80',
+	                height: '50'
+	            }));
+
+	            var li2 = $('<li>').append($('<div>', {
+	                class: 'company',
+	                text: result[i].entp_name
+	            })).append($('<div>', {
+	                class: 'title',
+	                text: result[i].item_name
+	            }));
+     
+	            var li3 = $('<li>').append($('<a>', {
+	                href: 'detailPage?item_image=' + encodeURIComponent(result[i].item_image) + '&entp_name=' + encodeURIComponent(result[i].entp_name) + '&item_name=' + encodeURIComponent(result[i].item_name),
+	            }).append($('<img>', {
+	                src: 'resources/img/next.png',
+	                width: '20',
+	                height: '20',
+	                id: 'next'
+	            })));
+
+	            // ul¿¡ liµé Ãß°¡
+	            ul.append(li1).append(li2).append(li3);
+
+	            // pillList¿¡ ul Ãß°¡
+	            pillList.append(ul).append('<hr>');
+	        }
+	    } else {
+	        // °á°ú°¡ ¾øÀ» ¶§ Ã³¸® (¿¹: ¸Ş½ÃÁö Ãâ·Â ¶Ç´Â ´Ù¸¥ µ¿ÀÛ ¼öÇà)
+	        pillList.append('<p>ºÏ¸¶Å©µÈ ÀÇ¾àÇ°ÀÌ ¾ø½À´Ï´Ù.</p>');
+	    }
+	}
+	
+	</script>
 </body>
 </html>

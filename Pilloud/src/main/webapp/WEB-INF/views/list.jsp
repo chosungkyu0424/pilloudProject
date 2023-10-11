@@ -55,16 +55,23 @@
         // 로컬 스토리지에서 결과 가져오기
         var result = JSON.parse(localStorage.getItem('searchResult'));
         var pillList = $('#pillList');
-
+        var encodedItemImage;
+    	var encodedEntpName;
+    	var encodedItemName; 
+    	
         if (result && result.length > 0) {
             // 결과가 있으면 리스트를 생성
             for (var i = 0; i < result.length; i++) {
+            	let item_image = result[i].item_image;
+	            let entp_name = result[i].entp_name;
+	            let item_name = result[i].item_name;
+	              
                 // ul 요소 생성
                 var ul = $('<ul>');
 
                 // li 요소 생성
                 var li1 = $('<li>').append($('<img>', {
-				    src: result[i].item_image, // result[i].item_image에는 이미지 URL이 들어있다고 가정합니다.
+				    src: result[i].item_image,
 				    alt: '',
 				    id: 'sub',
 				    width: '80',
@@ -79,18 +86,27 @@
                     text: result[i].item_name // 로컬 스토리지에서 item_name 가져오기
                 }));
 
-                var encodedItemImage = encodeURIComponent(result[i].item_image);
-                var encodedEntpName = encodeURIComponent(result[i].entp_name);
-                var encodedItemName = encodeURIComponent(result[i].item_name);
+                encodedItemImage = encodeURIComponent(result[i].item_image);
+                encodedEntpName = encodeURIComponent(result[i].entp_name);
+                encodedItemName = encodeURIComponent(result[i].item_name);
 
                 var li3 = $('<li>').append($('<a>', {
-                    href: 'detailPage?item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName,  
-                }).append($('<img>', {
-                    src: 'resources/img/next.png',
-                    width: '20',
-                    height: '20',
-                    id: 'next'
-                })));   
+	                href: 'detailPage?item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName,
+	                style: 'display: flex; flex-direction: row; align-items: center;'
+	            }).append($('<img>', {
+	                src: 'resources/img/next.png',
+	                width: '20',
+	                height: '20',
+	                id: 'next'
+	            }))).append($('<button>', {
+	                text: '북마크 추가',
+	                id: 'bookmarkBtn',
+	                style: 'margin-top: 5px;'
+	            }));
+
+	            li3.find('#bookmarkBtn').on('click', function() {
+	                addBookmark(item_image, entp_name, item_name);
+	            });
 
                 // ul에 li들 추가
                 ul.append(li1).append(li2).append(li3);
@@ -99,7 +115,7 @@
                 pillList.append(ul).append('<hr>');
             }
         }
-    });
+    });  
 	   
 		const text = document.getElementsByClassName("text")[0];
 		const btn = document.getElementById("icon");
@@ -110,7 +126,24 @@
 			}
 		}
 		
-		
+		function addBookmark(item_image, entp_name, item_name) {
+		    $.ajax({
+		        type: 'POST',
+		        url: 'bookmark.do',
+		        data: {
+		            item_image: item_image,
+		            entp_name: entp_name,
+		            item_name: item_name
+		        },
+		        success: function(response) {
+		            alert('북마크가 추가되었습니다.');
+		        },
+		        error: function(xhr, status, error) {
+		            console.error('Ajax 오류:', status, error);
+		            alert('북마크 추가 중 오류가 발생했습니다.');
+		        }
+		    });
+		}    
 	</script>
 
 	<!-- footer -->

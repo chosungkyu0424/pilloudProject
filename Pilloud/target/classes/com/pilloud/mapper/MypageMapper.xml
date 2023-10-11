@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pilloud.mapper.MypageMapper">
+	
+	<!-- 마이페이지 개인정보(알러지, 복용중인약, 지병) -->
+    <select id="selectMyInfo" parameterType="com.pilloud.model.UserVO" resultType="com.pilloud.model.UserVO">
+       SELECT SUBSTRING_INDEX(ALLERGY, ',', 1) AS ALLERGY, SUBSTRING_INDEX(MEDICINE, ',', 1) AS MEDICINE, SUBSTRING_INDEX(DISEASE, ',', 1) AS DISEASE 
+       FROM USER_MST
+       WHERE ID = #{id}
+    </select>
+    
+</mapper>  

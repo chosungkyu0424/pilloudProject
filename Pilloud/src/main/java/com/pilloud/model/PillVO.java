@@ -101,4 +101,7 @@ public class PillVO {
 	
 	//프린트 앞 + 프린트 뒤
 	private String print;
+	
+	//id(북마크때문에 추가해줌)
+	private String id;
 }

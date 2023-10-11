@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pilloud.mapper.BookmarkMapper">
+
+	<!-- 의약품 검색 리스트 -->
+    <insert id="insertBookmark" parameterType="com.pilloud.model.PillVO">
+    	INSERT INTO BOOKMARK_MST VALUES(
+    									#{id},
+    									#{item_seq},
+    									#{item_name},
+    									#{entp_seq}, 
+    									#{entp_name}, 
+    									#{chartn}, 
+    									#{item_image}, 
+    									#{print_front}, 
+    									#{print_back}, 
+    									#{drug_shape}, 
+    									#{color_class1}, 
+    									#{color_class2}, 
+    									#{line_front}, 
+    									#{line_back}, 
+    									#{leng_long}, 
+    									#{leng_short},
+    									#{thick},
+    									#{img_regist_ts},
+    									#{class_no},
+    									#{etc_otc_code},
+    									#{item_permit_date},
+    									#{shape_code},
+    									#{mark_code_front_anal},
+    									#{mark_code_back_anal},
+    									#{mark_code_front_img},
+    									#{mark_code_back_img},
+    									#{item_eng_name},
+    									#{edi_code}
+    									)  
+    </insert>
+    
+    <!-- 북마크 리스트 -->
+    <select id="selectBookmark" parameterType="com.pilloud.model.PillVO" resultType="com.pilloud.model.PillVO">
+       SELECT * FROM BOOKMARK_MST WHERE ID = #{id};
+    </select>
+ 
+</mapper>

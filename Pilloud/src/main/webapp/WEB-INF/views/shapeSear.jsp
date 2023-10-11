@@ -39,7 +39,7 @@
 					<option value="색상">색상 선택</option> 
 				</select>
 				<select name="shape" id="div_sel">
-					<option value="분할선">분할선 선택</option> 
+					<option value="">분할선 선택</option> 
 					<option value="">없음</option>
 					<option value="+">(+)형</option>  
 					<option value="-">(-)형</option> 
