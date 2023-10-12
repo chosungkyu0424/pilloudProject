@@ -59,7 +59,9 @@ p {
 #pillList ul{
 	list-style:none;
 	display : block;
-	padding : 5px 0px 5px 30px;
+	padding : 5px 0px 5px 20px;
+	margin-top: 20px;
+	margin-bottom: 18px;
 }
 #pillList ul li {
 	display : inline-block;
@@ -74,9 +76,19 @@ p {
 	display: inline-block;
 }
 #pillList #next {
-	margin-left: 10px;
+ 	margin-left: 10px;
 	margin-bottom: 13px;
-/* 	display : inline-block; */
+}
+#pillList #bookmarkBtn {
+	background-color: #C4D89D;
+	color: #ffffff;
+	border: none;
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 5px;
+ 	font-weight: 600;
+ 	font-size: x-small;
+ 	width: 80px;
 }
 .company {
 	text-align : left;

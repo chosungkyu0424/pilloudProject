@@ -13,55 +13,68 @@ header {
 	position: fixed;
 	top: 0;
 	height: 50px;
-	width: 500px;
-	background-color: white;
-	border-bottom : 1px solid lightgrey;
+	width: 499px;
+	background-color: #C4D89D;
 }
 
 #arrow {
 	float: left;
 	width: 25px;
 	height: 20px;
-	margin: 16px 0px 10px 15px;
+	margin: 18px 0px 10px 15px;
 }
 
 .title {
 	float : right;
-	margin : 15px 185px 0px 0px;
-	font-weight: bold;
+	margin : 15px 180px 0px 0px;
+	color : #ffffff;
 }
 
-/* h3 {
-	text-align: center;
- 	display: inline-block;
-	left: 50%;
-	right: 50%;
+.qlist {
+ 	margin-top : 60px;
 }
 
-img {
-	position: relative;
-	width: 40px;
-	height: 40px;
- 	top: 10px;
- 	left: -200px;
+ul {
+	list-style: none;
+	margin: 20px 0;
+	padding: 10px 0 10px 20px;
+	display : block;
 }
 
-h3 {
-	text-align: center;
-} */
+#title {
+	display: inline-block;
+ 	font-weight: bold;
+ 	width: 400px;
+ 	margin-right: 30px;
+/* 	overflow: hidden;
+ 	text-overflow: ellipsis;
+	white-space: nowrap; */
+}
 
-/* p {
-	padding: 10px;
-} */
+li {
+	display: inline-block;
+}
 
-footer {
+p {
+	margin-top: 25px;	
+	margin-bottom: 0;
+}
+
+#down {
+	width: 20px;
+	height: 20px;
+ 	margin-left: 10px;
+} 
+
+.footer {
 	position: fixed;
 	bottom: 0;
 	height: 70px;
-	width: 500px;
+	width: 499px;
+	background-color: #ffffff;
 }
 
-footer img {
+.home {
 	width: 50px;
 	margin: 0px 0px 0px 10px;
 }
