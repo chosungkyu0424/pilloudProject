@@ -13,4 +13,7 @@ public interface BookmarkService {
 
 	/* 북마크 출력 */
 	public List<PillVO> selectBookmark(String id) throws Exception;
+
+	/* 북마크 삭제 */
+	void deleteBookmark(PillVO vo) throws Exception;
 }

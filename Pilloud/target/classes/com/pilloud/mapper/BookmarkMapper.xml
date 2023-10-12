@@ -40,5 +40,10 @@
     <select id="selectBookmark" parameterType="com.pilloud.model.PillVO" resultType="com.pilloud.model.PillVO">
        SELECT * FROM BOOKMARK_MST WHERE ID = #{id};
     </select>
+    
+    <!-- 북마크 삭제  -->
+    <delete id="deleteBookmark" parameterType="com.pilloud.model.PillVO">
+    	DELETE FROM BOOKMARK_MST WHERE ITEM_SEQ = #{item_seq};
+    </delete>
  
 </mapper>

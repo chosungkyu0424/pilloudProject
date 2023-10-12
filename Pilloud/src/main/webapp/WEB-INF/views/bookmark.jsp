@@ -69,6 +69,7 @@
 	            console.log("Success!");
 	            console.log(result);   
 	            resultList = result;
+	            console.log(resultList); 
 	            fn_addList(); 
 
 	            if (result == null) {
@@ -116,8 +117,37 @@
 	                width: '20',
 	                height: '20',
 	                id: 'next'
-	            })));
+	            }))).append($('<button>', {
+	                text: '삭제',  
+	                id: 'deleteBtn',
+	                style: 'margin-top: 5px;'
+	            }));
 
+	         	// 삭제 버튼에 클릭 이벤트 리스너 등록
+	            li3.find('#deleteBtn').on('click', function() {
+	                var index = $(this).closest('ul').index(); // 삭제 버튼을 누른 리스트의 인덱스
+	                var itemSeq = resultList[index].item_seq; // 삭제할 의약품의 item_seq
+
+	                // 서버로 삭제 요청 보내기
+	                $.ajax({
+	                    type: "post",  
+	                    url: "deleteBookmark",   
+	                    data: JSON.stringify({ item_seq: itemSeq }),     
+	                    contentType: "application/json; charset=utf-8",
+	                    success: function(response) {
+	                        // 성공적으로 삭제되면 해당 리스트를 화면에서도 제거
+	                        resultList.splice(index, 1); // 리스트에서 해당 인덱스의 요소 제거
+	                        alert("삭제되었습니다.");
+	                        $('#pillList').empty(); // 리스트 비우기
+	                        fn_addList(); // 업데이트된 리스트를 다시 추가
+	                    },
+	                    error: function(xhr, status, error) {
+	                        console.error("Ajax 오류:", status, error);
+	                        alert("삭제 중 오류가 발생했습니다.");
+	                    }
+	                });
+	            });
+	            
 	            // ul에 li들 추가
 	            ul.append(li1).append(li2).append(li3);
 

@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -55,6 +56,14 @@ public class BookmarkController {
         }
         // 세션이 없거나 사용자 ID가 없으면 빈 목록 반환 또는 에러 처리
         return Collections.emptyList();
+    }
+    
+    /* 북마크 식제 */
+    @RequestMapping(value="deleteBookmark", method=RequestMethod.POST, produces = "application/json")
+    @ResponseBody
+    public void deleteBookmark(@RequestBody PillVO vo) throws Exception {
+    	
+    	bookmarkservice.deleteBookmark(vo);
     }
     
     

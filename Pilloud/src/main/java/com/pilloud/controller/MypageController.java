@@ -1,5 +1,6 @@
 package com.pilloud.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.pilloud.model.PillVO;
 import com.pilloud.model.UserVO;
 import com.pilloud.service.MypageService;
 
@@ -25,21 +27,37 @@ public class MypageController {
     @ResponseBody
     @RequestMapping(value = "/selectMyInfo", method = RequestMethod.POST, produces = "application/json")
     public UserVO selectMyInfo(@RequestBody UserVO vo) throws Exception {
-        /* UserVO user = (UserVO) session.getAttribute("user");
-        UserVO userInfo = null;
-        
-        if (user != null) {
-            String id = user.getId();
-            // 사용자 정보 조회 쿼리 실행
-            userInfo = mypageService.selectMyInfo(id);
-        }
-        
-        return userInfo;*/
-    	UserVO userInfo = null;
-    	if (vo != null) {
-    		userInfo = mypageService.selectMyInfo(vo);
-    	}
-    	return userInfo;
-    } 
+    	UserVO userInfo = new UserVO();
+
+        if (vo != null) {
+            String medicine = vo.getMedicine();
+            String allergy = vo.getAllergy();
+            String disease = vo.getDisease();
+
+            if (medicine != null && allergy != null && disease != null) {
+                userInfo = mypageService.selectMyInfo(vo);
+            } else {
+                userInfo.setAllergy("추가");
+                userInfo.setMedicine("추가");
+                userInfo.setDisease("추가");
+            }
+        } 
+
+        return userInfo;
     	
+    }
+    
+    /* 회원탈퇴 */
+    @RequestMapping(value="deleteUser", method=RequestMethod.POST, produces = "application/json")
+    @ResponseBody
+    public String deleteUser(HttpSession session, @RequestBody UserVO vo) throws Exception {
+    	// 회원 삭제 처리
+        mypageService.deleteUser(vo);
+        
+        // 세션 무효화 (세션 값을 삭제)
+        session.invalidate();
+        
+        // 성공적으로 탈퇴되었다는 메시지를 반환
+        return "success";
+    }
 }

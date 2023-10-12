@@ -75,6 +75,7 @@
 	    if (result && result.length > 0) {
 	        for (var i = 0; i < result.length; i++) {
 	        	  
+	        	let item_seq = result[i].item_seq;
 	            let item_image = result[i].item_image;
 	            let entp_name = result[i].entp_name;
 	            let item_name = result[i].item_name;
@@ -95,12 +96,14 @@
 	                class: 'title',
 	                text: item_name
 	            }));
+	            
+	            encodedItemSeq = encodeURIComponent(result[i].item_seq);
 	            encodedItemImage = encodeURIComponent(result[i].item_image);
 	        	encodedEntpName = encodeURIComponent(result[i].entp_name);
-	        	encodedItemName = encodeURIComponent(result[i].item_name);    
+	        	encodedItemName = encodeURIComponent(result[i].item_name);
 	        	
-	            var li3 = $('<li>').append($('<a>', {
-	                href: 'detailPage?item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName,
+	            var li3 = $('<li>').append($('<a>', { 
+	                href: 'detailPage?item_seq=' + encodedItemSeq + '&item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName ,
 	                style: 'display: flex; flex-direction: row; align-items: center;'
 	            }).append($('<img>', {
 	                src: 'resources/img/next.png',
@@ -110,11 +113,11 @@
 	            }))).append($('<button>', {
 	                text: 'ºÏ¸¶Å© Ãß°¡',
 	                id: 'bookmarkBtn',
-	                style: 'margin-top: 5px;'
+	                style: 'margin-top: 5px;' 
 	            }));
 
 	            li3.find('#bookmarkBtn').on('click', function() {
-	                addBookmark(item_image, entp_name, item_name);
+	                addBookmark(item_seq, item_image, entp_name, item_name);
 	            });
 
 	            ul.append(li1).append(li2).append(li3);
@@ -169,11 +172,12 @@
 	    });
 	}
 	
-	function addBookmark(item_image, entp_name, item_name) {
+	function addBookmark(item_seq, item_image, entp_name, item_name) {
 	    $.ajax({
 	        type: 'POST',
 	        url: 'bookmark.do',
 	        data: {
+	        	item_seq: item_seq,
 	            item_image: item_image,
 	            entp_name: entp_name,
 	            item_name: item_name

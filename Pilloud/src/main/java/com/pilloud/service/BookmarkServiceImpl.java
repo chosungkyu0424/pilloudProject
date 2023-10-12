@@ -34,5 +34,13 @@ public class BookmarkServiceImpl implements BookmarkService{
 		
 	}
     
+    /* 북마크 삭제*/
+    @Override
+	public void deleteBookmark(PillVO vo) throws Exception {
+		
+    	bookmarkmapper.deleteBookmark(vo);
+		
+	}
+    
 }
 

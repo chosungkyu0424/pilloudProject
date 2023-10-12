@@ -24,5 +24,11 @@ public class MypageServiceImpl implements MypageService{
 		
 	}
     
+    /* 회원탈퇴 */
+    @Override
+	public void deleteUser(UserVO vo) throws Exception{
+    	mypagemapper.deleteUser(vo);
+    }
+    
 }
 
