@@ -52,7 +52,7 @@
 		<a href="question">자주 하는 질문</a><br><br><br>
 		<a href="notice">공지사항</a><br><br><br>
 		<a href="termsOfService">약관 및 정책</a><br><br><br>
-		<a href="">버전 정보</a><br><br><br>
+		<a href="" onclick="alert('현재 버전 7.1.0')">버전 정보</a><br><br><br>
 		<a href="/logout.do" onclick="fn_logout()">로그아웃</a><br><br><br> 
 		<a href="" onclick="fn_deleteUser()">탈퇴하기</a><br>
 	</div><br>

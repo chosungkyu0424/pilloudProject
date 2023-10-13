@@ -1,125 +1,123 @@
 @charset "EUC-KR";
 html, body {
-	border-left-width: 1px;
-	border-left-style: solid;
-	border-left-color: #ddd;
-	border-right-width: 1px;
-	border-right-style: solid;
-	border-right-color: #ddd;
-	margin: 0 auto;
-	width: 500px;
-	height: 100%;
-	overflow: auto;  
-	
-	-ms-overflow-style: none;
+   border-left-width: 1px;
+   border-left-style: solid;
+   border-left-color: #ddd;
+   border-right-width: 1px;
+   border-right-style: solid;
+   border-right-color: #ddd;
+   margin: 0 auto;
+   width: 500px;
+   height: 100%;
+   overflow: auto;  
+   
+   -ms-overflow-style: none;
 }
 
 ::-webkit-scrollbar {
-	display: none;
+   display: none;
 } 
 
 hr {
-	border-width : 1px 0px 0px 0px; 
-	border-style : solid;
-	border-color: lightgrey;
-	height : 1px;
-	margin-bottom: 0;
+   border-width : 1px 0px 0px 0px; 
+   border-style : solid;
+   border-color: lightgrey;
+   height : 1px;
+   margin-bottom: 0;
 }
 header {
-	position: fixed;
-	top: 0;
-	height: 50px;
-	width: 499px;
-	background-color: #C4D89D;
+   position: fixed;
+   top: 0;
+   height: 50px;
+   width: 499px;
+   background-color: #C4D89D;
 }
 
-input {
-	padding: 8px 8px 8px 12px;
-	margin: 10px 10px 0px 10px;
-	width: 380px;
-	float: right;
-	border-radius: 10px;
-	border: 1px solid #C4D89D;
+h3 {
+	float : right;
+	margin : 15px 145px 0px 0px;
+	color: #ffffff;
 }
 
 #arrow {
 	float: left;
-	width: 25px;  
+	width: 25px;
 	height: 20px;
-	margin: 6px 0px 10px 15px;
+	margin: 18px 0px 10px 15px;
 }
 p {
-	font-size : 12px;
-	text-align : right;
-	display:inline-block;
-	/* border-bottom:1px solid lightgrey; */
-	width : 100%;
-	/* padding : 0px 0px 10px 0px; */
-	margin-bottom: 4px;
+   font-size : 12px;
+   text-align : right;
+   display:inline-block;
+   width : 100%;
+   margin-bottom: 4px;
 }
 #pillList ul{
-	list-style:none;
-	display : block;
-	padding : 0px 0px 10px 20px;
+   list-style:none;
+   display : block;
+   padding : 5px 0px 5px 20px;
+	margin-top: 19px;
+	margin-bottom: 18px;
 }
 #pillList ul li {
-	display : inline-block;
+   display : inline-block;
 }
 #pillList .title {
-	font-size: small;
-	font-weight: bold;
-	width: 300px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	display: inline-block;
+   font-size: small;
+   font-weight: bold;
+   width: 300px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   display: inline-block;
 }
 #pillList #next {
-	margin-left: 10px;
-	margin-bottom: 13px;
-/* 	display : inline-block; */
+   margin-left: 10px;
+   margin-bottom: 13px;
+}
+#pillList #deleteBtn {
+	background-color: #C4D89D;
+	color: #ffffff;
+	border: none;
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 5px;
+ 	font-weight: 600;
+ 	font-size: 11px;
+ 	width: 80px;
+/*  	height: 26px; */
 }
 .company {
-	text-align : left;
-	margin-left : 50px;
-	font-size : 13px;
+   text-align : left;
+   margin-left : 50px;
+   font-size : 13px;
 }
 .title {
-	text-align : left;
-	margin-left : 50px;
-	margin-top:10px;
-	font-size : 20px;
-	font-weight : bold;
+   text-align : left;
+   margin-left : 50px;
+   margin-top:10px;
+   font-size : 20px;
+   font-weight : bold;
 }
-/* #next {
-	margin-left:170px;
-	margin-bottom : 10px;
-} */
 
 #icon {
-	position: absolute;
-	width: 18px;
-	height: 18px;
-	top: 18px;
-	right: 20px;
-	margin: 0;
+   position: absolute;
+   width: 18px;
+   height: 18px;
+   top: 18px;
+   right: 20px;
+   margin: 0;
 }
  
-footer {
-	position: fixed;
+.footer {
+ 	position: fixed;
 	bottom: 0;
 	height: 70px;
-	width: 500px;
-}
-
-footer img {
-	width: 50px;
-	margin: 0px 0px 0px 10px;
+	width: 499px;
+ 	background-color: #ffffff;
 }
 
 .home {
 	width: 50px;
 	margin: 0px 0px 0px 10px;
 }
-
-

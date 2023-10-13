@@ -92,24 +92,26 @@
 
                 var li3 = $('<li>').append($('<a>', {
 	                href: 'detailPage?item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName,
-	                style: 'display: flex; flex-direction: row; align-items: center;'
+	                style: 'display: inline-block;'
 	            }).append($('<img>', {
 	                src: 'resources/img/next.png',
 	                width: '20',
 	                height: '20',
 	                id: 'next'
-	            }))).append($('<button>', {
+	            })));
+                
+                var li4 = $('<li>').append($('<button>', {
 	                text: '북마크 추가',
 	                id: 'bookmarkBtn',
-	                style: 'margin-top: 5px;'
+	                style: 'margin-top: 5px;' 
 	            }));
 
-	            li3.find('#bookmarkBtn').on('click', function() {
+	            li4.find('#bookmarkBtn').on('click', function() {
 	                addBookmark(item_image, entp_name, item_name);
 	            });
 
                 // ul에 li들 추가
-                ul.append(li1).append(li2).append(li3);
+                ul.append(li1).append(li2).append(li3).append(li4);
 
                 // pillList에 ul 추가
                 pillList.append(ul).append('<hr>');
