@@ -117,13 +117,13 @@ public class CommonService {
 	public String makeUrl(Map<String, Object> map) {
 		String url="";
 		map.put("itemName", URLEncoding(map.get("itemName").toString()));
-		if(map.containsKey("typeName")) {
-			map.put("typeName", URLEncoding(map.get("typeName").toString()));
+//		if(map.containsKey("typeName")) {
+//			map.put("typeName", URLEncoding(map.get("typeName").toString()));
 			url = map.get("endpoint").toString()+"?serviceKey="+map.get("serviceKey").toString()
-					+"&typename="+map.get("typeName").toString()+"&"+map.get("default").toString()+"&itemName="+map.get("itemName").toString();
-		}else {
-			url = map.get("endpoint").toString()+"?"+map.get("infoMap").toString();
-		}
+					+"&"+map.get("default").toString()+"&itemName="+map.get("itemName").toString();
+//		}else {
+//			url = map.get("endpoint").toString()+"?"+map.get("infoMap").toString();
+//		}
 		
 		return url;
 	}
@@ -220,14 +220,19 @@ public class CommonService {
 		
 	}
 	
-	public List mainCallAPI(Map<String, Object> urlInfo) throws JsonProcessingException {
+	public List<String> mainCallAPI(Map<String, Object> urlInfo) throws JsonProcessingException {
 		String url = makeUrl(urlInfo);
 		String response = callAPI(url);
 		JsonNode bodyMap = jsonStringToMap(response);
 		Object bodyMapString = mapToBodyMap(bodyMap);
-		List<Map<String, Object>> result = new ArrayList<>();
-		result = stringToArr(bodyMapString.toString());
-		System.out.print(result);
+		List<Map<String, Object>> resultList = new ArrayList<>();
+		resultList = stringToArr(bodyMapString.toString());
+//		System.out.print(resultList);
+		List<String> result = new ArrayList<>();
+
+		for(int i=0; i<resultList.size();i++) {
+			result.add(resultList.get(i).get("ITEM_SEQ").toString());
+		}
 		return result;
 	}
 	public List stringToArr(String jsonString) {
@@ -254,4 +259,7 @@ public class CommonService {
         }
         return items;
 	}
+	
+	
+
 }

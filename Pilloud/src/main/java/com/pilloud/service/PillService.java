@@ -10,4 +10,6 @@ public interface PillService {
 
     /* 의약품 검색리스트 */
 	public List<PillVO> searchPillNm(PillVO searchVo) throws Exception;
+
+	public List<PillVO> searchPillWarn(List<String> seqList);
 }

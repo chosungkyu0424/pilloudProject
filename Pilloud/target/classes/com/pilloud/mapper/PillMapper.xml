@@ -11,5 +11,15 @@
 			AND ITEM_NAME LIKE CONCAT('%', #{itemNm},'%')
 		</if>
     </select>
+    
+    <!-- 의약품 주의사항 검색 리스트 -->
+    <select id="searchPillWarn" parameterType="String" resultType="com.pilloud.model.PillVO">
+       SELECT * 
+       FROM PILL_MST 
+       WHERE 1=1
+       <if test='seqList != null and seqList != ""' >
+			AND ITEM_SEQ IN (${seqList})
+		</if>
+    </select>
   
 </mapper>

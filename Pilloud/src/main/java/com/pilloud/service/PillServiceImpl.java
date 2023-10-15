@@ -22,5 +22,19 @@ public class PillServiceImpl implements PillService{
         
         return pillmapper.searchPillNm(searchVo);
     }
+
+	@Override
+	public List<PillVO> searchPillWarn(List<String> seq) {
+		// TODO Auto-generated method stub
+		String seqList = "";
+		for(int i =0;i<seq.size();i++) {
+			if(i==(seq.size()-1)) {
+				seqList+="'"+seq.get(i).toString()+"'";
+			}else {
+				seqList+="'"+seq.get(i).toString()+"',";
+			}
+		}
+		return pillmapper.searchPillWarn(seqList);
+	}
 }
 

@@ -10,4 +10,7 @@ public interface PillMapper {
     /* 의약품 검색 리스트 */
 	public List<PillVO> searchPillNm(PillVO searchVo) throws Exception;
     
+	/* 의약품 주의사항검색 리스트 */
+	public List<PillVO> searchPillWarn(String searchVo);
+
 }
