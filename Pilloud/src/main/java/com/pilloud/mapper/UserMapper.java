@@ -19,5 +19,6 @@ public interface UserMapper {
     /* 유저정보수정 */
     public int updateInfo(UserVO user);
     
-    
+    /* 회원탈퇴 */
+	public void deleteUser(UserVO vo) throws Exception;
 }

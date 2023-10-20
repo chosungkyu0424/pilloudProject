@@ -31,8 +31,8 @@
 				history.back();    
 				//window.location.href = 'pillSear';
 			}
-		</script>
-		<h3 class=title>제목</h3>
+		</script>  
+		<h3 class=title>상세정보</h3>   
 
 	</div>
 

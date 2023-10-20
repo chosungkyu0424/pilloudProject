@@ -1,6 +1,7 @@
 package com.pilloud.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -47,17 +48,4 @@ public class MypageController {
     	
     }
     
-    /* 회원탈퇴 */
-    @RequestMapping(value="deleteUser", method=RequestMethod.POST, produces = "application/json")
-    @ResponseBody
-    public String deleteUser(HttpSession session, @RequestBody UserVO vo) throws Exception {
-    	// 회원 삭제 처리
-        mypageService.deleteUser(vo);
-        
-        // 세션 무효화 (세션 값을 삭제)
-        session.invalidate();
-        
-        // 성공적으로 탈퇴되었다는 메시지를 반환
-        return "success";
-    }
 }

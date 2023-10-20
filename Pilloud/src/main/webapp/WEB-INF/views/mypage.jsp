@@ -54,7 +54,7 @@
 		<a href="termsOfService">약관 및 정책</a><br><br><br>
 		<a href="" onclick="alert('현재 버전 7.1.0')">버전 정보</a><br><br><br>
 		<a href="/logout.do" onclick="fn_logout()">로그아웃</a><br><br><br> 
-		<a href="" onclick="fn_deleteUser()">탈퇴하기</a><br>
+		<a href="" onclick="fn_deleteUser()">탈퇴하기</a><br>       
 	</div><br>
 	
 	<!-- 하단바 -->
@@ -98,28 +98,31 @@
 	function fn_deleteUser(){
 		var id = '<c:out value="${sessionScope.user.id}" />';  
 		
-		 $.ajax({
-		        type: "post",
-		        url: "deleteUser",
+		 $.ajax({ 
+		        type: "post",  
+		        url: "/deleteUser",
 		        data: JSON.stringify({ id: id }),
 		        contentType: "application/json; charset=utf-8",
-		        success: function(response) {
-		            if (response === "success") {
-		                // 성공적으로 삭제되면 알림창을 보여줌
-		                alert("회원탈퇴되었습니다. 이용해주셔서 감사합니다.");
-		                
-		                // 메인 페이지로 리다이렉트
-		                window.location.href = "main";
-		            } else {
-		                // 탈퇴에 실패한 경우의 처리
-		                alert("탈퇴 중 오류가 발생했습니다.");
-		            }
+		        success: function(response) {  
+		        	if(response == 'success'){
+		        		console.log(response + "조성규");  
+		        	    
+			        	alert("회원탈퇴가 완료되었습니다.");
+			        	
+			        	window.location.href = "main"; 
+		        	}
+		        	else{
+		        		alert("탈퇴 중 오류가 발생했습니다.");    
+		        	}
+		        	     
 		        },
 		        error: function(xhr, status, error) {
 		            console.error("Ajax 오류:", status, error);
 		            alert("탈퇴 중 오류가 발생했습니다.");
 		        }
 		    });    
+		 
+		 
 	}
 	
 </script>

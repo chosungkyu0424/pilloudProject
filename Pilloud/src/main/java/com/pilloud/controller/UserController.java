@@ -179,4 +179,19 @@ public class UserController {
     }
     
   
+    /* 회원탈퇴 */
+    @RequestMapping(value="deleteUser", method=RequestMethod.POST)
+    @ResponseBody
+    public String deleteUser(HttpServletRequest request, @RequestBody UserVO vo) throws Exception {
+        
+        // 회원 삭제 처리
+    	userservice.deleteUser(vo);
+        
+    	// 세션 무효화 (세션 값을 삭제)
+        HttpSession session = request.getSession();
+        session.invalidate(); 
+        
+        return "success";
+        
+    }
 }

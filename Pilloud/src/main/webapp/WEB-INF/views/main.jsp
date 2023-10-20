@@ -55,7 +55,14 @@
 		<a href="notice" style="text-decoration-line:none;">
 		<img src="resources/img/main/menu5.png" alt="공지사항" class="menu5" /> </a>
 		<a href="modify" style="text-decoration-line:none;"></a>
-		<img src="resources/img/main/menu6.png"  alt="건강정보추가" class="menu6" />
+		<c:if test="${ user != null }">   
+			<a href="modify" style="text-decoration-line:none;">    
+			<img src="resources/img/main/menu6.png"  alt="건강정보추가" class="menu6" />   
+		</c:if> 
+		<c:if test="${ user == null }"> 
+			<a href="signlog" style="text-decoration-line:none;">  
+			<img src="resources/img/main/menu6.png"  alt="건강정보추가" class="menu6" />     
+		</c:if>
 	</div>
 	
 	<!-- 하단 바 -->

@@ -9,9 +9,4 @@
        WHERE ID = #{id}
     </select>
     
-    <!-- 회원탈퇴 -->
-    <delete id="deleteUser" parameterType="com.pilloud.model.UserVO">
-    	DELETE FROM USER_MST WHERE ID = #{id};
-    </delete>
-    
 </mapper>  

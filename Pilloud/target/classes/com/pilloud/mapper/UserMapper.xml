@@ -44,5 +44,9 @@
         UPDATE USER_MST SET EMAIL = #{email}, TEL = #{tel}, SEX = #{sex}, ALLERGY = #{allergy}, MEDICINE = #{medicine}, DISEASE = #{disease}, PREG_YN = #{pregnant} WHERE ID = #{id}
     </update>
     
+    <!-- 회원탈퇴 -->
+    <delete id="deleteUser" parameterType="com.pilloud.model.UserVO">
+    	DELETE FROM USER_MST WHERE ID = #{id};
+    </delete>
     
 </mapper>

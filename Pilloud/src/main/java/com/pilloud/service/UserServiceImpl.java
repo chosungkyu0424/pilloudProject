@@ -47,5 +47,11 @@ public class UserServiceImpl implements UserService{
 	public int updateInfo(UserVO user) throws Exception {
 		return usermapper.updateInfo(user);
 	}
+	
+	/* 회원탈퇴 */
+    @Override
+	public void deleteUser(UserVO vo) throws Exception{
+    	usermapper.deleteUser(vo);
+    }
     
 }
