@@ -24,7 +24,8 @@
 				}
 			</script>
 			<div id="search">
-				<input type="text" placeholder="의약품명을 입력해주세요" class="text" /> <img
+				<input type="text" placeholder="의약품명을 입력해주세요" class="text" id="inputPillNm"
+					onkeyup="if(window.event.keyCode==13){search()}" /> <img
 					src="resources/img/search.png" alt="" id="icon" onclick="search()" />
 			</div>
 		</div>
@@ -126,6 +127,39 @@
 			if (!text.value) {
 				alert("검색하실 의약품명을 입력해주세요.");
 			}
+			var pillNm = $('#inputPillNm').val();
+
+			var data = {
+				itemNm : pillNm,
+			};
+			console.log(data);
+
+			$.ajax({
+				type : "post",
+				url : "/searchPillNm",
+				data : JSON.stringify(data),
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success : function(result) {
+					console.log(result);
+					resultList = result;
+
+					// 검색 결과를 로컬 스토리지에 저장
+					localStorage
+							.setItem('searchResult', JSON.stringify(result));
+
+					//URL로 리디렉션  
+					window.location.href = 'list';
+
+					if (result == null) {
+						alert("약물 정보를 가져오는 데 실패했습니다.");
+					}
+				},
+				error : function(xhr, status, error) {
+					console.error("Ajax 오류:", status, error);
+					alert("오류가 발생했습니다. 다시 시도해주세요.");
+				}
+			});
 		}
 		
 		function addBookmark(item_image, entp_name, item_name) {
