@@ -24,6 +24,30 @@ hr {
 	height: 1px;
 }
 
+header {
+	position: fixed;
+	top: 0;
+	height: 50px;
+	width: 499px;
+	background-color: #C4D89D;
+}
+
+#pillName {
+	padding: 8px 8px 8px 12px;
+	margin: 10px 10px 0px 10px;
+	width: 380px;
+	float: right;
+	border-radius: 10px;
+	border: 1px solid #C4D89D;
+}
+
+#arrow {
+	float: left;
+	width: 25px;
+	height: 20px;
+	margin: 18px 0px 10px 15px;
+}
+
 #searcher {
 	position: fixed;
 	top: 0;
@@ -105,13 +129,6 @@ hr {
 
 .chkradio li input[type="radio"]:focus+label {
 	border: 2px solid #DCE2C5;
-}
-
-#arrow {
-	float: left;
-	width: 25px;
-	height: 20px;
-	margin: 18px 0px 10px 15px;
 }
 
 form>div {

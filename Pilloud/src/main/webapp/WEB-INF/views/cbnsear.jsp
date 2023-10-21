@@ -13,12 +13,18 @@
 </head>
 </head>
 <body>
-	<!-- 검색 창 -->
-	<div id="searcher">
-		<a href="main" style="text-decoration-line: none;"> <img
-			src="resources/img/left_arrow.png" alt="화살표" id="arrow" /></a>
-		<h3 class=title>주의사항 검색</h3>
-	</div>
+	
+	<header>
+		<!-- 검색 창 -->
+		<div>
+			<a href="main" style="text-decoration-line: none;"> <img  
+				src="resources/img/left_arrow.png" alt="화살표" id="arrow" /></a>
+			<div id="search">
+				<input type="text" placeholder="의약품명을 입력해주세요" class="text" id="pillName"  onkeyup="if(window.event.keyCode==13){fn_search()}"/> <img
+					src="resources/img/search.png" alt="" id="icon" onclick="fn_search()" />
+			</div>
+		</div>
+	</header>
 
 
 	<!-- 라디오박스 -->
@@ -42,7 +48,7 @@
 			<li><input type="radio" id="radioEight" name="select" /> <label
 				for="radioEight">분할주의</label></li>
 		</ul>
-		<input type="text" value="" id="pillName" placeholder="약품명을 입력하세요"/>
+		<!-- <input type="text" value="" id="pillName" placeholder="약품명을 입력하세요"/> -->
 		<div id="submit">
 			<input type="button" value="검색하기" onclick="search()" />
 		</div>
