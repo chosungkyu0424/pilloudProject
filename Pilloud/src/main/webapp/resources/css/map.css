@@ -1,0 +1,312 @@
+@charset "EUC-KR";
+html, body {
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #ddd;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #ddd;
+	margin: 0 auto;
+	width: 500px;
+	height: 100%;
+	overflow: auto;  
+	
+	-ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+	display: none;
+} 
+
+/* header */
+header {
+	position: fixed;
+	top: 0;
+	height: 50px;
+	width: 500px;
+	background-color: #C4D89D;
+	border-bottom : 1px solid lightgrey;
+}
+#arrow {
+	float: left;
+	width: 25px;
+	height: 20px;
+	margin: 16px 0px 10px 15px;
+}
+.title {
+	float : right;
+	margin : 15px 225px 0px 0px;
+	font-weight : bold;
+	color : white;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #000;
+}
+
+#content {
+	padding: 20px 0;
+	min-width: 1024px;	/* 창의 최소 크기 지정 */
+}
+
+img {
+	vertical-align: middle;	/* 세로축 가운데 정렬 */
+}
+
+table {
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid;
+	border-collapse: collapse;	/* 테두리 겹침 설정 collapse: 겹치지 않게 처리 */
+}
+
+table th, table td {
+	border: 1px solid;
+	padding: 5px 10px;
+}
+
+table td a:hover { font-weight: bold; }
+
+.btnSet { margin-top: 20px;
+text-align:center;	}
+
+a.btn-fill, a.btn-empty {
+	text-align: center;
+	padding: 3px 10px;
+	border:1px solid #3367d6;
+	border-radius: 3px;
+	box-shadow: 2px 2px 3px #022d72;
+	/* 오른쪽, 아래쪽, 번진 정도 */
+}
+
+a.btn-fill { 
+	background-color: #3367d6;
+	color: #fff;
+}
+
+a.btn-empty { 
+	background-color: #fff;
+	color: #3367d6
+}
+
+a.btn-fill-s, a.btn-empty-s {
+	text-align: center;
+	padding: 1px 10px;
+	border:1px solid #c4dafc
+	border-radius: 3px;
+	box-shadow: 2px 2px 3px #022d72;
+	color: #0000cd;
+	font-size: 13px;
+}
+
+a.btn-fill-s { 
+	background-color: #bacdfa;
+}
+
+a.btn-empty-s { 
+	background-color: #fff;
+}
+
+.btnSet a:not(:first-child) {
+	margin-left: 3px;
+}
+
+a:hover { cursor:pointer; }
+
+input {
+	height: 22px;
+	padding: 3px 5px;
+	font-size: 15px;
+}
+
+input[type=radio] {
+	width: 18px;
+	margin: 0 5px 3px;
+	vertical-align: middle;
+}
+
+table tr td label:not(:last-child) {
+	margin-right: 20px;	
+}
+
+.w-pct60 { width: 60% }
+.w-pct70 { width: 70% }
+.w-pct80 { width: 80% }
+.w-px40 { width: 40px }
+.w-px60 { width: 60px }
+.w-px80 { width: 80px }
+.w-px100 { width: 100px }
+.w-px120 { width: 120px }
+.w-px140 { width: 140px }
+.w-px160 { width: 160px }
+.w-px180 { width: 180px }
+.w-px200 { width: 200px }
+.w-px300 { width: 300px }
+
+.left { text-align: left }
+.right { text-align: right }
+
+.font-img { cursor: pointer; }
+
+ul { list-style: none; padding: 0; }
+#list-top { width: 80%; padding: 20px 10%; margin-top : 45px;}
+#list-top ul { margin:0; display:flex; }
+#list-top ul:last-child { float: right; }
+#list-top ul:first-child { float: left; }
+#list-top ul li:not(:first-child) { margin-left:2px }
+#list-top div { width: 100%; height: 32px;}
+#list-top ul li * { vertical-align:middle; }
+
+input[name=title] { width:calc(100% - 14px) }
+textarea[name=content] { width:calc(100% - 6px); height: 150px; resize: none;}
+
+/* 파일 첨부 */
+.file-img { width: 18px; height:18px; cursor:poinrter; }
+#attach-file, #delete-file { display:none; }
+  
+select { height: 32px }
+
+ul.grid { width: 80%; margin: 0 10%; }
+.grid li { float: left; width: 19%; height: 150px; border: 1px solid gray; box-sizing: border-box; }
+.grid li:not(:nth-child(5n)) { margin: 0 1.25% 20px 0  }
+.grid li div{ text-align: left; padding: 10px; }
+.grid li div:nth-child(1) { 
+	height:60px; 
+	line-height: 23px;
+	overflow:hidden; 
+	display:-webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical; /* 말 줄임 표시 */
+	word-Wrap: break-word; /* 영문 여러 줄 */
+}
+.grid li div:nth-child(2) { padding: 0 10px; }   
+
+
+
+#map {
+	position: absolute;
+	width: 800px;
+	height: 600px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 3px solid #666;
+	display: none;
+}
+
+#map-background{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color:#000;
+	opacity:0.3;
+	display: none;
+}
+
+.list {
+	margin:14px 0px 14px 20px
+}
+
+/* 약국이름 */
+.pName {
+	font-size : 18px;
+	font-weight : bolder;
+}
+
+.pName:hover {
+	color : #C4D89D;
+}
+
+/* 약국 전화번호 */
+.pTel {
+	font-size : 14px;
+	color : lightgrey;
+}
+
+/* 약국 주소 */
+.pAddr {
+	font-size : 14px;
+}
+
+
+/* include/page.jsp의 스타일 가져옴 */
+.page_on, .page_off, .page_next, .page_last, .page_first, .page_prev {
+	display: inline-block;
+	line-height: 30px;
+	margin: 0;		
+}
+
+.page_on, .page_off {
+	min-width:22px;
+	padding: 0 5px 2px;
+}
+
+.page_next, .page_last, .page_first, .page_prev {
+	text-indent: -99999999px;
+	border: 1px solid #d0d0d0;
+	width: 30px;
+	height : 30px;
+}
+
+.page_on {
+	border: 1px solid #C4D89D;
+	background-color: #C4D89D;
+	color:#FFF;
+	font-weight: bold;
+}
+
+.page_next { background: url("/resources/img/page_next.jpg") center no-repeat; }
+.page_last { background: url("/resources/img/page_last.jpg") center no-repeat; }
+.page_prev { background: url("/resources/img/page_prev.jpg") center no-repeat; }
+.page_first { background: url("/resources/img/page_first.jpg") center no-repeat; }    
+
+.list-view, .grid-view { font-size:25px; color:#3367d6; padding-top:3px; }
+
+#list-top ul.common li:not(:last-child) {margin-right: 10px}
+
+/* 검색창 */
+#searchPharmacy {
+	width : 350px;
+	border : solid 0px;
+	border-bottom : solid 1px lightgrey;
+	margin : 10px 0px 10px 20px;
+}
+
+#icon {
+	float : right;
+	width: 18px;
+	height: 18px;
+	margin-top : 16px;
+}
+
+#searchPharmacy:hover {
+	border-bottom : solid 2px #C4D89D;
+	
+}
+
+#data-list {
+	margin : 0px 20px 20px 20px;
+	/* padding-bottom:1000px; */
+}
+#data-list ul.pharmacy li div:first-child { height:25px; }
+#data-list ul.pharmacy li div:last-child { font-size:14px; }
+
+
+hr {
+	opacity : 0.5;
+}
+/* footer */
+.footer {
+	position: fixed;
+	bottom: 0;
+	height: 70px;
+	width: 499px;
+	background-color: #ffffff;
+}
+
+.home {
+	width: 50px;
+	margin: 0px 0px 0px 10px;
+}
