@@ -16,7 +16,7 @@
 		<div>
 			<a href="main"> <img src="resources/img/left_arrow.png" alt="화살표"
 				id="arrow" /></a>
-			<div class=title>약국찾기</div>
+			<h3 class=title>약국찾기</div>
 		</div>
 	</header>
 	<div id="list-top">

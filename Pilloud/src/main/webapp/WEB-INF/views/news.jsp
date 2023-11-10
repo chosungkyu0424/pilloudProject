@@ -16,7 +16,7 @@
 	<div>
 	<a href="main">
 		<img src="resources/img/left_arrow.png" alt="화살표" id="arrow" /></a>
-		<div class=title>칼럼/시사</div>
+		<h3 class=title>칼럼/시사</h3>
 	</div>
 	</header>
 	
