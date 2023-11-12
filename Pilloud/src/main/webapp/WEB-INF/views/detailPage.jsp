@@ -125,7 +125,7 @@
 
 	<!-- footer -->
 	<div class="footer">
-		<hr>
+		<hr style="margin-top: 0; margin-bottom: 8px;">
 		<a href="main" style="text-decoration-line: none;"> <img
 			src="resources/img/LOGO_FULL.png" alt="¸ÞÀÎÈ¨" class="home" />
 		</a>
