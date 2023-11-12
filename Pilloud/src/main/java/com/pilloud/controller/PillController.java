@@ -19,9 +19,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pilloud.model.PillVO;
+import com.pilloud.model.UserVO;
 import com.pilloud.service.CommonService;
 import com.pilloud.service.PillService;
 import com.pilloud.service.ShapeService;
+import com.pilloud.service.UserService;
 
 @Controller
 public class PillController {
@@ -33,13 +35,26 @@ public class PillController {
 	private PillService pillService;
 	
 	@Autowired
+	private UserService userService;
+	
+	@Autowired
 	private CommonService commonService;
 	// 의약품 검색리스트
     @ResponseBody
     @RequestMapping(value = "/searchPillNm", method = RequestMethod.POST, produces = "application/json")
     public List<PillVO> searchPillNm(@RequestBody PillVO searchVo) throws Exception {
         // 서비스를 호출하여 검색 결과를 가져옴
+    	UserVO vo=new UserVO();
+    	vo.setId("lee");
         List<PillVO> resultList = pillService.searchPillNm(searchVo);
+        List<Map<String, Object>> warn = userService.getWarn(vo);
+        for(int i=0;i<resultList.size();i++) {
+        	for(int j=0;j<warn.size();j++) {
+        		if(resultList.get(i).getItem_seq().equals(warn.get(j).get("ITEM_SEQ").toString())){
+        			resultList.get(i).setWarnYn("Y");
+        		}
+        	}
+        }
         return resultList;
     }
     
