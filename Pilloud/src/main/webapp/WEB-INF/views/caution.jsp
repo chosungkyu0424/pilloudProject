@@ -18,7 +18,7 @@
     
 	<!-- 약품명 상단 -->
 	<div class="top">
-		<img src="resources/img/left.png" alt="화살표" id="arrow"
+		<img src="resources/img/left_arrow.png" alt="화살표" id="arrow"
 			onclick="history_back()" />
 		<script>
 		 document.addEventListener('DOMContentLoaded', function(){
@@ -56,7 +56,7 @@
 				history.back()
 			}
 		</script>
-		<h3 class=title>약품명</h3>
+		<h3 class=title>주의사항</h3>
 	</div>
 	
 	<!-- 약품 주의사항 내용 -->
@@ -64,14 +64,14 @@
 <!-- 	<p>내용</p> -->
 <!-- 	</div> -->
 <div id="caution">
-<h3 style="margin-top:50px;margin-left:20px"> 주의사항</h3>
-<textArea id="warnText" readonly style="width:90%;height:100px;border:none;margin:10px;"></textArea>
-<h3 style="margin-top:10px;margin-left:20px"> 저장용법</h3>
-<textArea id="store" readonly style="width:90%;height:30px;border:none;margin:10px;"></textArea>
-<h3 style="margin-top:10px;margin-left:20px"> 부작용 종류</h3>
-<textArea id="seQesitm" readonly style="width:90%;height:100px;border:none;margin:10px;"></textArea>
-<h3 style="margin-top:10px;margin-left:20px"> 복용법</h3>
-<textArea id="useMethodQesitm" readonly style="width:90%;height:100px;border:none;margin:10px;"></textArea>
+<h3 style="margin:80px 0px 15px 20px"> 주의사항</h3>
+<textArea id="warnText" readonly style="width:90%;height:100px;border:none;margin:5px 22px 5px 23px;"></textArea>
+<h3 style="margin:40px 0px 15px 20px"> 저장용법</h3>
+<textArea id="store" readonly style="width:90%;height:100px;border:none;margin:5px 22px 5px 23px;"></textArea>
+<h3 style="margin:40px 0px 15px 20px"> 부작용 종류</h3>
+<textArea id="seQesitm" readonly style="width:90%;height:100px;border:none;margin:5px 22px 5px 23px;"></textArea>
+<h3 style="margin:40px 0px 15px 20px"> 복용법</h3>
+<textArea id="useMethodQesitm" readonly style="width:90%;height:100px;border:none;margin:5px 22px 5px 23px;"></textArea>
 
 </div>
 

@@ -29,7 +29,7 @@
     
 	<!-- 상세 페이지 상단 -->
 	<div class="top">
-		<img src="resources/img/left.png" alt="화살표" id="arrow"
+		<img src="resources/img/left_arrow.png" alt="화살표" id="arrow"
 			onclick="history_back()" />
 		<script>  
 			function history_back() {

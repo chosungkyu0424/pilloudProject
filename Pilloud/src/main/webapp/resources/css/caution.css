@@ -10,7 +10,13 @@ html, body {
 	width: 500px;
 	height: 100%;
 	overflow: hidden;
+	-ms-overflow-style: none;
 }
+
+::-webkit-scrollbar {
+   display: none;
+} 
+
 hr {
 	border-width : 1px 0px 0px 0px; 
 	border-style : solid;
@@ -22,14 +28,15 @@ hr {
 .title {
 	float : right;
 	margin : 15px 210px 0px 0px;
-	color : black;
+	color : white;
 }
 .top {
 	position: fixed;
 	top: 0;
 	height: 50px;
-	width: 500px;
-	background-color: white;
+	width: 499px;
+	/* background-color: white; */
+ 	background-color: #C4D89D;
 	border-bottom : 1px solid lightgrey;
 }
 
@@ -43,6 +50,29 @@ hr {
 /* 약품 주의사항 내용 */
 .pill_caution {
 	margin : 70px 0px 0px 20px;
+}
+
+#warnText,
+#store,
+#seQesitm,
+#useMethodQesitm {
+	resize: none;
+	font-size: medium;
+/* 	font-weight: 500; */
+	line-height: 25px;
+	font-family: initial;
+}
+#warnText::-webkit-scrollbar {
+	display: none;
+}
+#store::-webkit-scrollbar {
+	display: none;
+}
+#seQesitm::-webkit-scrollbar {
+	display: none;
+}
+#useMethodQesitm::-webkit-scrollbar {
+	display: none;
 }
 
 /* 하단 바 */
