@@ -219,7 +219,7 @@ ul.grid { width: 80%; margin: 0 10%; }
 </style>
 </head>
 <body>
-<h3>공공 데이터</h3>
+<!-- <h3>공공 데이터</h3> -->   
 <div class="btnSet dataOption">
 	<a class="btn-fill">약국 조회</a>  
 </div>
