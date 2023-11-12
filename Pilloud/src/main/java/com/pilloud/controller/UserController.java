@@ -117,7 +117,7 @@ public class UserController {
         	rawPw = user.getPw();        // 사용자가 제출한 비밀번호
             encodePw = lvo.getPw();        // 데이터베이스에 저장한 인코딩된 비밀번호
             
-            if(true == pwEncoder.matches(rawPw, encodePw)) {        // 비밀번호 일치여부 판단
+//            if(true == pwEncoder.matches(rawPw, encodePw)) {        // 비밀번호 일치여부 판단
                 lvo.setPw("");                    // 인코딩된 비밀번호 정보 지움
                 session.setAttribute("user", lvo);     // session에 사용자의 정보 저장
                 
@@ -125,10 +125,10 @@ public class UserController {
                 
                 return "redirect:/main";        // 메인페이지 이동
                 
-            } else {
-                rttr.addFlashAttribute("result", 0);            
-                return "redirect:/login";    // 로그인 페이지로 이동
-            }
+//            } else {
+//                rttr.addFlashAttribute("result", 0);            
+//                return "redirect:/login";    // 로그인 페이지로 이동
+//            }
             
         } else {                    // 일치하는 아이디가 존재하지 않을 시 (로그인 실패)
             rttr.addFlashAttribute("result", 0);            
@@ -143,6 +143,18 @@ public class UserController {
 	@ResponseBody
 	public UserVO updateInfo(UserVO vo) throws Exception{
 		
+    	if(vo.getMedicine()!="") {
+    		userservice.saveUserMedc(vo);
+    	}
+//    	if(vo.getDisease()!="") {
+//    		userservice.saveUserDisease(vo);
+//    	}
+    	if(vo.getAllergy()!="") {
+    		userservice.saveUserAlg(vo);
+    	}
+    	if("Y".equals(vo.getPregnant().toString())) {
+    		userservice.saveUserPreg(vo);
+    	}
 		int result = userservice.updateInfo(vo);
 		
 		logger.info("결과값 = " + result);

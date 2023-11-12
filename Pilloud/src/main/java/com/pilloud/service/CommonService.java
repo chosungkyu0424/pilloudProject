@@ -116,11 +116,17 @@ public class CommonService {
 	
 	public String makeUrl(Map<String, Object> map) {
 		String url="";
-		map.put("itemName", URLEncoding(map.get("itemName").toString()));
-//		if(map.containsKey("typeName")) {
-//			map.put("typeName", URLEncoding(map.get("typeName").toString()));
+		if(map.containsKey("itemName")){			
+			map.put("itemName", URLEncoding(map.get("itemName").toString()));
 			url = map.get("endpoint").toString()+"?serviceKey="+map.get("serviceKey").toString()
 					+"&"+map.get("default").toString()+"&itemName="+map.get("itemName").toString();
+		}else {
+			url = map.get("endpoint").toString()+"?serviceKey="+map.get("serviceKey").toString()
+					+"&"+map.get("default").toString();
+			
+		}
+//		if(map.containsKey("typeName")) {
+//			map.put("typeName", URLEncoding(map.get("typeName").toString()));
 //		}else {
 //			url = map.get("endpoint").toString()+"?"+map.get("infoMap").toString();
 //		}

@@ -1,5 +1,8 @@
 package com.pilloud.service;
 
+import java.util.List;
+import java.util.Map;
+
 import com.pilloud.model.UserVO;
 
 public interface UserService {
@@ -19,6 +22,13 @@ public interface UserService {
     /* 유저정보수정 */
     public int updateInfo(UserVO user) throws Exception;
     
+    public void saveUserMedc(UserVO user) throws Exception;
+    
+    public void saveUserAlg(UserVO user) throws Exception;
+    
+    public void saveUserPreg(UserVO user) throws Exception;
     /* 회원탈퇴 */
 	public void deleteUser(UserVO vo) throws Exception;
+	
+	public List<Map<String, Object>> getWarn(UserVO vo);
 }

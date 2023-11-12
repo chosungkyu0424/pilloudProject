@@ -8,6 +8,8 @@
 <head>
 <link rel="stylesheet" href="resources/css/detailPage.css"
 	type="text/css">
+	    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	
 <meta charset="EUC-KR">
 <title>상세 페이지</title>
 </head>
@@ -16,10 +18,13 @@
         String itemImage = request.getParameter("item_image");
         String entpName = request.getParameter("entp_name");
         String itemName = request.getParameter("item_name");
+        String warnYn = request.getParameter("warnYn");
         // URL 디코딩
         itemImage = URLDecoder.decode(itemImage, "EUC-KR");
         entpName = URLDecoder.decode(entpName, "EUC-KR");
         itemName = URLDecoder.decode(itemName, "EUC-KR");  
+        warnYn = URLDecoder.decode(warnYn, "EUC-KR"); 
+        session.setAttribute("itemName", itemName);
     %>
     
 	<!-- 상세 페이지 상단 -->
@@ -31,10 +36,29 @@
 				history.back();    
 				//window.location.href = 'pillSear';
 			}
+			let itemName = '<%= itemName %>'
+			let warnYn = '<%= warnYn %>'
+			$(document).ready(function(){
+				if(warnYn=='Y'&&(itemName.includes('아스피린')||itemName.includes('타이레놀'))){
+					$("#warn").css("display", "none");
+				}else{
+					$("#warn").show()
+				}
+				
+			});
+			//if(item_name.startsWith('아스피린')||item_name.startsWith('타이레놀')){
+				//$("#warn").props("disabled", true);
+			//}
 		</script>  
 		<h3 class=title>상세정보</h3>   
 
 	</div>
+	<!-- 주의 알림 표기 -->
+
+	<div id="warn" style="margin-top:50px;background-color:#bbbbbb;padding:10px" >
+	<span style="color: red; font-size: 10px;margin:15px">●</span>복용주의 의약품으로 등록된 항목입니다.
+	</div>
+
 
 	<!-- 큰 이미지 부분 -->
 	<div>
