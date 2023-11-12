@@ -26,7 +26,7 @@
 			<li><img src="resources/img/down.png" id="down"/></li>
 			</a>
 			<p id="answer1" style="display: none;">
-				[모양으로 검색]을 통해 검색 할 수 있습니다.<br> 
+				[모양으로 검색]을 통해 검색 할 수 있습니다.
 				또한 정확한 의약품명을 입력하지 않아도 검색 할 수 있습니다.
 			</p>
 		</ul><hr>
@@ -36,7 +36,7 @@
 			<li><img src="resources/img/down.png" id="down"/></li>
 			</a>
 			<p id="answer2" style="display: none;">
-				메인 화면에 있는 '주변약국 찾기'에서 다양한 필터를 통해<br> 
+				메인 화면에 있는 '주변약국 찾기'에서 다양한 필터를 통해
 				내 근처 약국, 원하는 지역에 해당되는 약국을 찾을 수 있습니다.</p>
 		</ul><hr>
 		<ul>
@@ -45,7 +45,7 @@
 			<li><img src="resources/img/down.png" id="down"/></li>
 			</a>
 			<p id="answer3" style="display: none;">
-				회원 정보 수정 또는 휴대폰 번호 변경은 메인 화면에 있는<br>
+				회원 정보 수정 또는 휴대폰 번호 변경은 메인 화면에 있는
 				'건강정보 추가'에 들어가서 수정 부탁드립니다.</p>
 		</ul><hr>
 	</div>

@@ -31,7 +31,7 @@ header {
 }
 .title {
 	float : right;
-	margin : 15px 225px 0px 0px;
+	margin : 15px 200px 0px 0px;
 	font-weight : bold;
 	color : white;
 }
@@ -49,6 +49,8 @@ header {
 	width : 125px;
 	height : 75px;
 	margin-top:5px;
+	object-fit : cover;
+	/* object-fit : fill; */
 }
 .clist hr {
 	width : 100%;
