@@ -41,7 +41,10 @@
     
     <!-- 유저정보수정 -->
     <update id="updateInfo" parameterType="com.pilloud.model.UserVO">
-        UPDATE USER_MST SET EMAIL = #{email}, TEL = #{tel}, SEX = #{sex}, ALLERGY = #{allergy}, MEDICINE = #{medicine}, DISEASE = #{disease}, PREG_YN = #{pregnant} WHERE ID = #{id}
+        UPDATE USER_MST 
+        SET EMAIL = #{email}, TEL = #{tel}, SEX = #{sex}, ALLERGY = #{allergy}
+        , MEDICINE = #{medicine}, DISEASE = #{disease}, PREG_YN = #{pregnant} 
+        WHERE ID = #{id}
     </update>
     
     <!-- 회원탈퇴 -->
@@ -49,4 +52,39 @@
     	DELETE FROM USER_MST WHERE ID = #{id};
     </delete>
     
+    <select id="searchPillNm" parameterType="String" resultType="Map">
+       SELECT ITEM_SEQ
+       FROM PILL_MST 
+       WHERE 1=1
+       <if test='itemNm != null and itemNm != ""' >
+			AND ITEM_NAME LIKE CONCAT('%', #{itemNm},'%')
+		</if>
+    </select>
+    
+    <insert id="saveUserMedc" parameterType="List">
+        INSERT INTO WARN_MST
+        SET USER_ID = #{id}
+        	, ITEM_SEQ = ${alg}
+        ON DUPLICATE KEY UPDATE
+        USER_ID = #{id}
+        	, ITEM_SEQ = ${alg}
+    </insert>
+    <insert id="saveUserPreg" parameterType="com.pilloud.model.UserVO">
+        INSERT INTO WARN_MST
+        SET USER_ID = #{id}
+        	, ITEM_SEQ = ${pregnant}
+        ON DUPLICATE KEY UPDATE
+        user_id=user_id
+    </insert>
+    <insert id="saveUserAlg" parameterType="com.pilloud.model.UserVO">
+        INSERT INTO WARN_MST
+        SET USER_ID = #{userId}
+        	, ITEM_SEQ = ${itemNm}
+        ON DUPLICATE KEY UPDATE
+        	user_id=user_id
+    </insert>
+    <select id="getWarn" parameterType="com.pilloud.model.UserVO" resultType="Map">
+        SELECT ITEM_SEQ FROM WARN_MST
+        WHERE USER_ID = #{id}
+    </select>
 </mapper>

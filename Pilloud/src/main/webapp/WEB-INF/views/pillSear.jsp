@@ -79,6 +79,7 @@
 	            let item_image = result[i].item_image;
 	            let entp_name = result[i].entp_name;
 	            let item_name = result[i].item_name;
+	            let warnYn = result[i].warnYn;
 
 	            var ul = $('<ul>');
 	            var li1 = $('<li>').append($('<img>', {
@@ -101,9 +102,10 @@
 	            encodedItemImage = encodeURIComponent(result[i].item_image);
 	        	encodedEntpName = encodeURIComponent(result[i].entp_name);
 	        	encodedItemName = encodeURIComponent(result[i].item_name);
+	        	encodedWarnYn = encodeURIComponent(result[i].warnYn);
 	        	
 	            var li3 = $('<li>').append($('<a>', { 
-	                href: 'detailPage?item_seq=' + encodedItemSeq + '&item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName ,
+	                href: 'detailPage?item_seq=' + encodedItemSeq + '&item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName +'&warnYn='+ encodedWarnYn,
 	                style: 'display: inline-block;'
 	            }).append($('<img>', {
 	                src: 'resources/img/next.png',

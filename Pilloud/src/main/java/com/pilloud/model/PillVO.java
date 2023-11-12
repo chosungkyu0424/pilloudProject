@@ -104,4 +104,6 @@ public class PillVO {
 	
 	//id(북마크때문에 추가해줌)
 	private String id;
+	
+	private String warnYn;
 }

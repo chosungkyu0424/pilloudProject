@@ -1,5 +1,8 @@
 package com.pilloud.mapper;
 
+import java.util.List;
+import java.util.Map;
+
 import com.pilloud.model.UserVO;
 
 public interface UserMapper {
@@ -21,4 +24,14 @@ public interface UserMapper {
     
     /* 회원탈퇴 */
 	public void deleteUser(UserVO vo) throws Exception;
+	
+	public List<Map<String, Object>> searchPillNm(String user);
+
+	public void saveUserAlg(Map<String, Object> pill);
+
+	public void saveUserPreg(UserVO user);
+
+	public void saveUserMedc(Map<String, Object> pill);
+	
+	public List<Map<String, Object>> getWarn(UserVO vo);
 }

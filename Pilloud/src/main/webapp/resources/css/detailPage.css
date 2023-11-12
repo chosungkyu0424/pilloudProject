@@ -101,3 +101,8 @@ hr {
 	width: 50px;
 	margin: 0px 0px 0px 10px;
 }
+
+#warn {
+	background-color: grey;
+	margin-top:50px;
+}

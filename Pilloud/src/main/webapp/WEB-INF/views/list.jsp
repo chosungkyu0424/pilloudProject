@@ -59,6 +59,7 @@
         var encodedItemImage;
     	var encodedEntpName;
     	var encodedItemName; 
+    	var encodedwarnYn; 
     	
         if (result && result.length > 0) {
             // 결과가 있으면 리스트를 생성
@@ -66,6 +67,7 @@
             	let item_image = result[i].item_image;
 	            let entp_name = result[i].entp_name;
 	            let item_name = result[i].item_name;
+	            let warnYn = result[i].warnYn;
 	              
                 // ul 요소 생성
                 var ul = $('<ul>');
@@ -90,9 +92,10 @@
                 encodedItemImage = encodeURIComponent(result[i].item_image);
                 encodedEntpName = encodeURIComponent(result[i].entp_name);
                 encodedItemName = encodeURIComponent(result[i].item_name);
+                encodedwarnYn = encodeURIComponent(result[i].warnYn);
 
                 var li3 = $('<li>').append($('<a>', {
-	                href: 'detailPage?item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName,
+	                href: 'detailPage?item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName,'&warnYn='+warnYn
 	                style: 'display: inline-block;'
 	            }).append($('<img>', {
 	                src: 'resources/img/next.png',
