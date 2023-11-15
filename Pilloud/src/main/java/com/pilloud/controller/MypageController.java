@@ -35,13 +35,9 @@ public class MypageController {
             String allergy = vo.getAllergy();
             String disease = vo.getDisease();
 
-            if (medicine != null && allergy != null && disease != null) {
-                userInfo = mypageService.selectMyInfo(vo);
-            } else {
-                userInfo.setAllergy("추가");
-                userInfo.setMedicine("추가");
-                userInfo.setDisease("추가");
-            }
+           
+            userInfo = mypageService.selectMyInfo(vo);
+            
         } 
 
         return userInfo;
