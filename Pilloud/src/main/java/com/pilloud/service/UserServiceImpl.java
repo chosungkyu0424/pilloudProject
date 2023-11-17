@@ -71,8 +71,10 @@ public class UserServiceImpl implements UserService{
 			System.out.print(apiResult);
 			Map<String, Object> pill = new HashMap<>();
 			for(int a=0;a<apiResult.size();a++) {
-				pill.put("alg", alg[a]);
+				
+				pill.put("alg", apiResult.get(a).toString());
 				pill.put("userId", user.getId());
+				System.out.print(pill);
 				usermapper.saveUserMedc(pill);
 			}
 		}

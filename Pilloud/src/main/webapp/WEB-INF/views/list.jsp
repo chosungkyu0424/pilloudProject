@@ -95,7 +95,7 @@
                 encodedwarnYn = encodeURIComponent(result[i].warnYn);
 
                 var li3 = $('<li>').append($('<a>', {
-	                href: 'detailPage?item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName,'&warnYn='+warnYn
+	                href: 'detailPage?item_image=' + encodedItemImage + '&entp_name=' + encodedEntpName + '&item_name=' + encodedItemName+'&warnYn='+warnYn,
 	                style: 'display: inline-block;'
 	            }).append($('<img>', {
 	                src: 'resources/img/next.png',

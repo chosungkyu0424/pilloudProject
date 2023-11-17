@@ -63,10 +63,10 @@
     
     <insert id="saveUserMedc" parameterType="List">
         INSERT INTO WARN_MST
-        SET USER_ID = #{id}
+        SET USER_ID = #{userId}
         	, ITEM_SEQ = ${alg}
         ON DUPLICATE KEY UPDATE
-        USER_ID = #{id}
+        USER_ID = #{userId}
         	, ITEM_SEQ = ${alg}
     </insert>
     <insert id="saveUserPreg" parameterType="com.pilloud.model.UserVO">

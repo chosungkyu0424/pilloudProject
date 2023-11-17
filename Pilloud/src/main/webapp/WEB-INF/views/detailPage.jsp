@@ -44,6 +44,9 @@
 				}else{
 					$("#warn").show()
 				}
+				if(warnYn=='null'){
+					$("#warn").css("display", "none");
+				}
 				
 			});
 			//if(item_name.startsWith('아스피린')||item_name.startsWith('타이레놀')){
