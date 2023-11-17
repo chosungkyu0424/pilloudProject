@@ -54,9 +54,9 @@
 		
 		<h4 class="w2">성별</h4><br>
 		<div class="text">
-		여<input type="checkbox" name="sex" class="cb1" value="M" onclick="validate(); checkOnlyOne(this);">
-		남<input type="checkbox" name="sex" class="cb2" value="W" onclick="validate(); checkOnlyOne(this);">
-		<div><span class="final_sex_ck">주소를 입력해주세요.</span></div> 
+		여<input type="checkbox" name="sex" class="cb1" value="W" onclick="validate(); checkOnlyOne(this);">
+		남<input type="checkbox" name="sex" class="cb2" value="M" onclick="validate(); checkOnlyOne(this);">
+		<div><span class="final_sex_ck">주소를 입력해주세요.</span></div>
 		</div><br><br> 
 		
 		<!-- 가입하기 버튼 (로그인 화면 이동) --> 
@@ -252,7 +252,7 @@ $('.pwpw').on("propertychange change keyup paste input", function(){
 	function validate() { 
 	   if (!(inputId.value && inputPw.value && inputPwpw.value && inputName.value && inputBirth.value && inputEmail.value && inputTel.value && selectSex1.checked || selectSex2.checked)) {
 	      button.disabled = true;
-	      button.classList.remove("signupBtnDisabled");
+	      button.classList.remove("signupBtnDisabled"); 
 	   } else {
 	      button.disabled = false;
 	      button.style.cursor = "pointer";

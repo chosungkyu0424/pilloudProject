@@ -10,7 +10,14 @@ html, body {
 	width: 500px;
 	height: 100%;
 	overflow: auto;
+	
+	-ms-overflow-style: none;
 }
+
+::-webkit-scrollbar {
+   display: none;
+} 
+	
 
 hr {
 	border-width : 1px 0px 0px 0px; 
@@ -23,14 +30,16 @@ hr {
 .title {
 	float : right;
 	margin : 15px 210px 0px 0px;
-	color : black;
+	color : white;
 }
 .top {
 	position: fixed;
 	top: 0;
 	height: 50px;
-	width: 500px;
-	background-color: white;
+	width: 499px;
+	/* background-color: white; */
+ 	background-color: #C4D89D;
+	border-bottom : 1px solid lightgrey;
 }
 
 #arrow {
@@ -44,7 +53,7 @@ hr {
 #img {
 	width : 400px;
 	hegith : 250px;
-	margin : 50px 0px 0px 45px;
+	margin : 50px 0px 0px 50px;
 }
 
 /* 회사명/약품명 */
@@ -90,11 +99,11 @@ hr {
 }
 
 .footer {
-	background-color: white;
 	position: fixed;
 	bottom: 0;
 	height: 70px;
-	width: 500px;
+	width: 499px;
+	background-color: #ffffff;
 }
 
 .home {

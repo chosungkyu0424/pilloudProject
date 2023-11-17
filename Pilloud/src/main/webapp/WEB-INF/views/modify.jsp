@@ -107,9 +107,10 @@
 	                	$('#pregYn').prop('checked', true);
 	                } else{   
 	                	$('#pregYn').prop('checked', false);
-	                }
-
+	                } 
+   
 	                // 알러지 정보를 콤마로 분리하여 리스트에 추가
+	                console.log(result.allergy);  
 	                var allergyItems = result.allergy.split(',');
 	                var allergyList = $('#allergyList');
 	                //allergyList.empty(); // 리스트 초기화  
