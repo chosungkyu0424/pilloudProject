@@ -44,7 +44,7 @@
 				}
 				if(warnYn=='Y'&&(itemName.includes('æ∆Ω∫««∏∞')||itemName.includes('≈∏¿Ã∑π≥Ó'))){
 					$("#warn").hide();
-				}else if(itemName.includes('∑Ë∆Á')){
+				}else if(itemName.includes('∑Ë∆Á')||itemName.includes('¥–Ω≈¡§')){
 					$("#warn").show();
 				}
 				
