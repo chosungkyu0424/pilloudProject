@@ -29,11 +29,7 @@
 		<!-- 이름 -->
 		<span id="name" style="margin: 50px 0 0 70px;font-size:18px;font-weight:bold;">${user.nm}님</span>  
 		<!-- 지병 -->
-		<div id="d">
-			<p class="di" id="my1">페니토인</p>
-	 		<p class="di" id="my2">인슐린</p>
-			<p class="di" id="my3">당뇨병</p>
-	 	</div>
+		  
 	 	
 	 	<hr style="width:90%;margin-bottom:15px;">
 	 	
@@ -75,23 +71,8 @@
 		var data = {
 		        id: id
 		    };
-		
-		$.ajax({  
-	        type: "post",
-	        url: "/selectMyInfo",        
-	        data: JSON.stringify(data),  // 객체를 JSON 문자열로 변환하여 전송
-	        contentType: "application/json; charset=UTF-8",
-	        dataType: "json",       
-	        success: function(result) { 
-	        	$('#my1').text(result.allergy);
-	            $('#my2').text(result.medicine);
-	            $('#my3').text(result.disease);  
-	            console.log('성공 여부: ' + result);
-	        },
-	        error: function() {
-	            alert("서버 오류가 발생했습니다. 다시 시도해주세요.");
-	        }   
-	    });  
+		 
+		  
 		
 	});  
 	
