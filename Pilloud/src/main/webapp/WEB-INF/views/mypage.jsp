@@ -22,21 +22,26 @@
 		<p id="header">마이페이지</p>
 	</div>
 	
-	<!-- 메인 -->
-	<div class="main">
-		<!-- 프로필 -->
-		<img alt="" src="../resources/img/profile.png" class="profile">
-		<!-- 이름 -->
-		<span id="name" style="margin: 50px 0 0 70px;font-size:18px;font-weight:bold;">${user.nm}님</span>  
-		<!-- 지병 -->
-		  
-	 	
-	 	<hr style="width:90%;margin-bottom:15px;">
-	 	
-	 	<a href="modify" style="margin:0px 100px 0 70px;">나의 정보 수정</a>
-	 	<a href="subscribe" style="margin-left:20px;">컬럼구독</a>
- 	</div>
-
+	   <!-- 메인 -->
+   <div class="main">
+      <!-- 프로필 -->
+      <img alt="" src="../resources/img/profile.png" class="profile">
+      <!-- 이름 -->
+      <span id="name" style="margin: 50px 0 0 70px;font-size:18px;font-weight:bold;">${user.nm}님</span>  
+      <br><br><br>
+      <!-- 지병 -->
+<!--      <div id="d">
+         <p class="di" id="my1">페니토인</p>
+          <p class="di" id="my2">인슐린</p>
+         <p class="di" id="my3">당뇨병</p>
+       </div> 
+-->
+       
+       <hr style="width:90%;margin-bottom:15px;margin-top:20px;">
+       
+       <a href="modify" style="margin:0px 0px 0px 170px;">나의 정보 수정</a>
+       <!-- <a href="subscribe" style="margin-left:20px;">컬럼구독</a> -->
+    </div>
 		
 	
 	<button type="button" name="subBtn" class="subBtn" onclick="location.href='bookmark'">
