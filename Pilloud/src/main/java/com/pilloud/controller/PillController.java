@@ -70,9 +70,9 @@ public class PillController {
 	    
 	    Map<String, Object> urlInfo = new HashMap<String, Object>();
 		urlInfo.put("endpoint", "https://apis.data.go.kr/1471000/DURPrdlstInfoService03/"+searchType);
-		urlInfo.put("default","pageNo=1&numOfRows=3&type=json");
+		urlInfo.put("default","pageNo=1&numOfRows=5&type=json");
 //		urlInfo.put("default","pageNo=1&numOfRows=3&type=json");//페이징 정보 추가
-		urlInfo.put("itemName", pillName);
+//		urlInfo.put("itemName", pillName);
 		urlInfo.put("serviceKey", pillAPIKey);
 		List<String> apiResult= commonService.mainCallAPI(urlInfo);
 		System.out.print(apiResult);

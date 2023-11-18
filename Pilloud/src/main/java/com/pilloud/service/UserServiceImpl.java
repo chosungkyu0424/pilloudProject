@@ -101,12 +101,15 @@ public class UserServiceImpl implements UserService{
 	public void saveUserAlg(UserVO user) throws Exception {
 		String[] medicine = user.getMedicine().split(",");
 		for(int m=0;m<medicine.length;m++) {
+			System.out.print(medicine);
 			String itemNm = medicine[m];
 			List<Map<String, Object>> pillList = usermapper.searchPillNm(itemNm);
+			System.out.print(pillList.size());
 			for(int l=0;l<pillList.size();l++) {
 				Map<String, Object> pill = new HashMap<String, Object>();
 				pill.put("itemNm", pillList.get(l).get("ITEM_SEQ").toString());
 				pill.put("userId", user.getId());
+				System.out.print(pill);
 				usermapper.saveUserAlg(pill);				
 			}
 		}
