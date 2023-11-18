@@ -39,14 +39,18 @@
 			let itemName = '<%= itemName %>'
 			let warnYn = '<%= warnYn %>'
 			$(document).ready(function(){
-				if(warnYn=='Y'&&(itemName.includes('æ∆Ω∫««∏∞')||itemName.includes('≈∏¿Ã∑π≥Ó'))){
-					$("#warn").css("display", "none");
-				}else{
-					$("#warn").show()
-				}
 				if(warnYn=='null'){
 					$("#warn").css("display", "none");
 				}
+				if(warnYn=='Y'&&(itemName.includes('æ∆Ω∫««∏∞')||itemName.includes('≈∏¿Ã∑π≥Ó'))){
+					$("#warn").css("display", "none");
+				}else if(itemName.includes('∑Ë∆Á')){
+					$("#warn").show();
+				}
+				else{
+					$("#warn").show();
+				}
+				
 				
 			});
 			//if(item_name.startsWith('æ∆Ω∫««∏∞')||item_name.startsWith('≈∏¿Ã∑π≥Ó')){
