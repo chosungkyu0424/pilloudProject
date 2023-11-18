@@ -40,14 +40,11 @@
 			let warnYn = '<%= warnYn %>'
 			$(document).ready(function(){
 				if(warnYn=='null'){
-					$("#warn").css("display", "none");
+					$("#warn").hide();
 				}
 				if(warnYn=='Y'&&(itemName.includes('æ∆Ω∫««∏∞')||itemName.includes('≈∏¿Ã∑π≥Ó'))){
-					$("#warn").css("display", "none");
+					$("#warn").hide();
 				}else if(itemName.includes('∑Ë∆Á')){
-					$("#warn").show();
-				}
-				else{
 					$("#warn").show();
 				}
 				
